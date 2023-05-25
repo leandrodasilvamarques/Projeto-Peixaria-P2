@@ -1,7 +1,8 @@
 package pescariaApi.classesSucessoras;
 
 public class Pessoa {
- String nome;
+    String nome;
+    String cpf;
 
     public String getNome() {
         return nome;
@@ -11,7 +12,13 @@ public class Pessoa {
         this.nome = nome;
     }
 
-    public String toString(){
-     return "nome: " + nome;
- }
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
+
 }
