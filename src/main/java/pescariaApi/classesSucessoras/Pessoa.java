@@ -1,6 +1,7 @@
 package pescariaApi.classesSucessoras;
 
 public class Pessoa {
+
  String nome;
 
     public String getNome() {
