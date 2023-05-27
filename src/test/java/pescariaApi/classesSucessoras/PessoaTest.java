@@ -1,6 +1,8 @@
 package pescariaApi.classesSucessoras;
 
 import org.junit.jupiter.api.Test;
+import pescariaApi.embarcacao.Barco;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class PessoaTest {
@@ -22,4 +24,5 @@ class PessoaTest {
     void testGet() {
         assertEquals("lucas", pessoa.getNome());
     }
+
 }

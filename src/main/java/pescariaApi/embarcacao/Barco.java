@@ -1,48 +1,60 @@
 package pescariaApi.embarcacao;
 
-import pescariaApi.classesSucessoras.ExperienciaEnum;
 import pescariaApi.classesSucessoras.TamanhoEnum;
+
 import java.util.ArrayList;
+
 public class Barco {
 
-    private ArrayList<Pescador> pescadorArrayList;
-    private int numDeRedes;
-    private TamanhoEnum tamanhoDoBarco;
-    private String nomeDoBarco;
+    private String nome;
+    private ArrayList<Pescador> listaDePescadores;
+    private Rede[] redes;
+    private TamanhoEnum tamanho;
     private double valorManutencao;
-    private Estoque estoqueDoBarco;
-    private ExperienciaEnum rendimentoEstatiscoDoBarco;
 
-    public ArrayList<Pescador> getPescadorArrayList() {
-        return pescadorArrayList;
+    public Barco() {
+
     }
 
-    public void setPescadorArrayList(ArrayList<Pescador> pescadorArrayList) {
-        this.pescadorArrayList = pescadorArrayList;
+    // pensei em quando instanciarmos um barco, ele receber o nome, a quantidade de redes, o tamanho
+    public Barco(String nome, int numeroDeRedes, TamanhoEnum tamanho) {
+        this.nome = nome;
+        this.redes = new Rede[numeroDeRedes];
+        this.tamanho = tamanho;
     }
 
-    public int getNumDeRedes() {
-        return numDeRedes;
+
+    public Rede[] getRedes() {
+        return redes;
     }
 
-    public void setNumDeRedes(int numDeRedes) {
-        this.numDeRedes = numDeRedes;
+    public void setRedes(Rede[] redes) {
+        this.redes = redes;
     }
 
-    public TamanhoEnum getTamanhoDoBarco() {
-        return tamanhoDoBarco;
+    public ArrayList<Pescador> getListaDePescadores() {
+        return listaDePescadores;
     }
 
-    public void setTamanhoDoBarco(TamanhoEnum tamanhoDoBarco) {
-        this.tamanhoDoBarco = tamanhoDoBarco;
+    public void setListaDePescadores(ArrayList<Pescador> listaDePescadores) {
+        this.listaDePescadores = listaDePescadores;
     }
 
-    public String getNomeDoBarco() {
-        return nomeDoBarco;
+
+    public TamanhoEnum getTamanho() {
+        return tamanho;
     }
 
-    public void setNomeDoBarco(String nomeDoBarco) {
-        this.nomeDoBarco = nomeDoBarco;
+    public void setTamanho(TamanhoEnum tamanho) {
+        this.tamanho = tamanho;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public double getValorManutencao() {
@@ -53,19 +65,6 @@ public class Barco {
         this.valorManutencao = valorManutencao;
     }
 
-    public Estoque getEstoqueDoBarco() {
-        return estoqueDoBarco;
-    }
 
-    public void setEstoqueDoBarco(Estoque estoqueDoBarco) {
-        this.estoqueDoBarco = estoqueDoBarco;
-    }
-
-    public ExperienciaEnum getRendimentoEstatiscoDoBarco() {
-        return rendimentoEstatiscoDoBarco;
-    }
-
-    public void setRendimentoEstatiscoDoBarco(ExperienciaEnum rendimentoEstatiscoDoBarco) {
-        this.rendimentoEstatiscoDoBarco = rendimentoEstatiscoDoBarco;
-    }
 }
+
