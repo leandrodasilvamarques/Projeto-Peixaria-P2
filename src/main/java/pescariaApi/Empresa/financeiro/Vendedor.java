@@ -1,6 +1,5 @@
 package pescariaApi.Empresa.financeiro;
 
-import pescariaApi.classesSucessoras.ExperienciaEnum;
 import pescariaApi.classesSucessoras.Pessoa;
 
 public class Vendedor{
