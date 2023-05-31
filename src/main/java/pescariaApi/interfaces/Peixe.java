@@ -1,5 +1,7 @@
 package pescariaApi.interfaces;
 
 public interface Peixe {
-    public double getPrecoQuilo();
+    double getPrecoQuilo();
+
+    Class<?> getTipo();
 }
