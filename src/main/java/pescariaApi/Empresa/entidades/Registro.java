@@ -19,6 +19,11 @@ public class Registro {
         return pescas.get(index);
     }
 
+    public int adicionarPesca(Pesca pesca){
+        pescas.add(pesca);
+        return pescas.indexOf(pesca);
+    }
+
     @Override
     public String toString() {
         return "Registro{" +
