@@ -13,7 +13,7 @@ public class Pesca {
         this.quiloPescado = quiloPescado;
     }
     public double getLucroPesca(int numeroDePescadores, double quiloPescado, Peixe tipoDoPeixe){
-        double lucro = quiloPescado * tipoDoPeixe.getPrecoQuilo() - numeroDePescadores* Financeiro.PRECO_PESCADOR;
-        return lucro;
+        return quiloPescado * tipoDoPeixe.getPrecoQuilo() - numeroDePescadores* Financeiro.PRECO_PESCADOR;
+
     }
 }
