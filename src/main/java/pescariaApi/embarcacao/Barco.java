@@ -7,7 +7,7 @@ public class Barco {
 
     private ArrayList<Pescador> pescadorArrayList;
     private int numDeRedes;
-    private TamanhoEnum tamanhoDoBarco;
+    //private TamanhoEnum tamanhoDoBarco;
     private String nomeDoBarco;
     private double valorManutencao;
     private Estoque estoqueDoBarco;
