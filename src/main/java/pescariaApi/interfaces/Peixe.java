@@ -1,4 +1,4 @@
-package pescariaApi.classesSucessoras;
+package pescariaApi.interfaces;
 
 public interface Peixe {
 
