@@ -1,5 +1,6 @@
 package pescariaApi.Empresa.entidades;
 
+import pescariaApi.Empresa.entidades.Financeiro.Financeiro;
 import pescariaApi.classesDeMetodos.AcoesAdmin;
 import pescariaApi.classesDeMetodos.AcoesUsuario;
 

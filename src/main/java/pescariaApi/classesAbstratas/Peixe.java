@@ -1,4 +1,6 @@
-package pescariaApi.Empresa.entidades;
+package pescariaApi.classesAbstratas;
+
+import pescariaApi.Empresa.entidades.Financeiro.Financeiro;
 
 public enum Peixe {
     
@@ -6,8 +8,8 @@ public enum Peixe {
 
     private double precoKg;
 
-    Peixe(double peso){
-        this.precoKg = peso;
+    Peixe(double precoKg){
+        this.precoKg = precoKg;
     }
 
     public double getPrecokg(){
