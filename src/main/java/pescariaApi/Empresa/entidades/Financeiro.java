@@ -6,4 +6,6 @@ public class Financeiro {
 
     static final double PRECO_PESCADOR = 150.00;
 
+    static final double VALOR_QUILO_DA_SARDINHA = 3.0;
+
 }

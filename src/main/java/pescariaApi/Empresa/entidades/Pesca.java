@@ -1,7 +1,5 @@
 package pescariaApi.Empresa.entidades;
 
-import pescariaApi.interfaces.Peixe;
-
 public class Pesca {
 
     private int numeroDePescadores;
@@ -14,7 +12,7 @@ public class Pesca {
         this.quiloPescado = quiloPescado;
     }
     public double getLucroPesca(int numeroDePescadores, double quiloPescado, Peixe tipoDoPeixe){
-        return quiloPescado * tipoDoPeixe.getPrecoQuilo() - numeroDePescadores* Financeiro.PRECO_PESCADOR;
+        return quiloPescado * tipoDoPeixe.getPrecokg() - numeroDePescadores * Financeiro.PRECO_PESCADOR;
     }
 
     @Override
