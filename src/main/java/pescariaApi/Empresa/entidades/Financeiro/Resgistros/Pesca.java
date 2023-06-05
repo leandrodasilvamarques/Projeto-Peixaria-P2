@@ -23,7 +23,7 @@ public class Pesca {
     }
 
     public double getLucroPesca(){
-        return quiloPescado * tipoDoPeixe.getPrecokg() - pescadores.size() * Valores.PRECO_PESCADOR;
+        return quiloPescado * tipoDoPeixe.getPrecokg() - pescadores.size() * Financeiro.valores.getPrecoPescador();
     }
 
     @Override
