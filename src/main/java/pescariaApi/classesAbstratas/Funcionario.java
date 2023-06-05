@@ -1,6 +1,6 @@
 package pescariaApi.classesAbstratas;
 
-public class Funcionario {
+public abstract class Funcionario {
 
     String nome;
     String cpf;
@@ -8,6 +8,10 @@ public class Funcionario {
     public Funcionario(String nome, String cpf) {
         this.nome = nome;
         this.cpf = cpf;
+    }
+
+    public Funcionario(){
+
     }
 
     public String getNome() {

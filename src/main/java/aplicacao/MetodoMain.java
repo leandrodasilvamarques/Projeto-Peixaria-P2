@@ -1,8 +1,14 @@
 package aplicacao;
 
+import pescariaApi.Empresa.entidades.Financeiro.Resgistros.Gerente;
+import pescariaApi.Empresa.entidades.Financeiro.Resgistros.Pesca;
+import pescariaApi.Empresa.entidades.Pescaria;
+
 import javax.swing.*;
 
 public class MetodoMain {
+
+    private static final Pescaria pescaria = new Pescaria();
     private static final int FAZER_LOGIN = 1;
 
     public static void main(String[] args) {
@@ -11,11 +17,13 @@ public class MetodoMain {
                 "[1] FAZER LOGIN\n" +
                 "[2] SAIR\n");
 
-        switch (Integer.parseInt(escolhaDeEntrada)){
-            case FAZER_LOGIN -> {
+        String emailParaLogin = JOptionPane.showInputDialog("Email: ");
+        String senhaParaLogin = JOptionPane.showInputDialog("Senha: ");
 
-            }
+       if(new Gerente().autenticar(emailParaLogin, senhaParaLogin)){
+           JOptionPane.showMessageDialog(null,"Voce fez login");
+       }
 
-        }
+
     }
 }

@@ -5,10 +5,29 @@ import pescariaApi.classesAbstratas.Funcionario;
 
 public class Gerente extends Funcionario implements Login {
 
-    private String emailParaLogin;
-    private String senhaParaLogin;
+    private String emailParaLogin = "admin";
+    private String senhaParaLogin = "123";
+    public Gerente() {
+    }
+
     public Gerente(String nome, String cpf) {
         super(nome, cpf);
+    }
+
+    public String getEmailParaLogin() {
+        return emailParaLogin;
+    }
+
+    public void setEmailParaLogin(String emailParaLogin) {
+        this.emailParaLogin = emailParaLogin;
+    }
+
+    public String getSenhaParaLogin() {
+        return senhaParaLogin;
+    }
+
+    public void setSenhaParaLogin(String senhaParaLogin) {
+        this.senhaParaLogin = senhaParaLogin;
     }
 
     @Override
