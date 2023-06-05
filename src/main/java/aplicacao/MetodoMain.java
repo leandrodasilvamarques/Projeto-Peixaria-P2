@@ -21,7 +21,6 @@ public class MetodoMain {
         String senhaParaLogin = JOptionPane.showInputDialog("Senha: ");
 
        if(new Gerente().autenticar(emailParaLogin, senhaParaLogin)){
-           JOptionPane.showMessageDialog(null,"Voce fez login");
        }
 
 
