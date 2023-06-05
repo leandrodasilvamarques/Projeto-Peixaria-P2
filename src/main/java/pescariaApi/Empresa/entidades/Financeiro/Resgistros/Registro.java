@@ -22,11 +22,10 @@ public class Registro {
 
     @Override
     public String toString() {
-        for (:) {
-
+        StringBuilder stringBuilder = new StringBuilder("Registro de Pescas: \n");
+        for (Pesca pesca : pescas) {
+            stringBuilder.append(pesca).append("\n");
         }
-        return "Registro{" +
-                "pescas=" + pescas +
-                '}';
+        return stringBuilder.toString();
     }
 }
