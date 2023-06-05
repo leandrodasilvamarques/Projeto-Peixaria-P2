@@ -2,12 +2,14 @@ package pescariaApi.Empresa.entidades.Financeiro;
 
 import pescariaApi.Empresa.entidades.Financeiro.Resgistros.Registro;
 
+import java.util.ArrayList;
+
 public class Financeiro {
 
     //valor inicial do sistema
-    double dinheiro = 1000;
+    static double dinheiro = 1000;
 
-   private Registro registro;
+    public static ArrayList<Registro> todosRegistros = new ArrayList<>();
 
     static public final double PRECO_PESCADOR = 150.00;
 
