@@ -1,10 +1,11 @@
 package pescariaApi.classesAbstratas;
 
 import pescariaApi.Empresa.entidades.Financeiro.Financeiro;
+import pescariaApi.Empresa.entidades.Valores;
 
 public enum Peixe {
     
-    SARDINHA(Financeiro.VALOR_QUILO_DA_SARDINHA);
+    SARDINHA(Valores.VALOR_QUILO_DA_SARDINHA);
 
     private double precoKg;
 

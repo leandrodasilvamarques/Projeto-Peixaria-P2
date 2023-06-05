@@ -3,6 +3,7 @@ package pescariaApi.Empresa.entidades.Financeiro.Resgistros;
 import pescariaApi.Empresa.entidades.Barco;
 import pescariaApi.Empresa.entidades.Financeiro.Financeiro;
 import pescariaApi.Empresa.entidades.Pescador;
+import pescariaApi.Empresa.entidades.Valores;
 import pescariaApi.classesAbstratas.Peixe;
 
 import java.util.List;
@@ -22,7 +23,7 @@ public class Pesca {
     }
 
     public double getLucroPesca(){
-        return quiloPescado * tipoDoPeixe.getPrecokg() - pescadores.size() * Financeiro.PRECO_PESCADOR;
+        return quiloPescado * tipoDoPeixe.getPrecokg() - pescadores.size() * Valores.PRECO_PESCADOR;
     }
 
     @Override

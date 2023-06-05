@@ -1,5 +1,5 @@
 package pescariaApi.classesDeMetodos;
 
-public class AcoesAdmin {
+public class MetodosAdminstrativos {
     
 }
