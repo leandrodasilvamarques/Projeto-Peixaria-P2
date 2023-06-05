@@ -22,6 +22,9 @@ public class Registro {
 
     @Override
     public String toString() {
+        for (:) {
+
+        }
         return "Registro{" +
                 "pescas=" + pescas +
                 '}';

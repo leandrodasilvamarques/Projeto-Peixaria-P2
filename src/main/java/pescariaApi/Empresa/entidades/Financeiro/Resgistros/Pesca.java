@@ -1,5 +1,6 @@
 package pescariaApi.Empresa.entidades.Financeiro.Resgistros;
 
+import pescariaApi.Empresa.entidades.Barco;
 import pescariaApi.Empresa.entidades.Financeiro.Financeiro;
 import pescariaApi.Empresa.entidades.Pescador;
 import pescariaApi.classesAbstratas.Peixe;
@@ -27,9 +28,10 @@ public class Pesca {
     @Override
     public String toString() {
         return "Pesca{" +
-                "numeroDePescadores=" + pescadores.size() +
+                "pescadores=" + pescadores +
                 ", tipoDoPeixe=" + tipoDoPeixe +
                 ", quiloPescado=" + quiloPescado +
+                ", barco=" + barco +
                 '}';
     }
 }
