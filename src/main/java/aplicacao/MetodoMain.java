@@ -12,8 +12,9 @@ public class MetodoMain {
                 "[2] SAIR\n");
 
         switch (Integer.parseInt(escolhaDeEntrada)){
-            case (FAZER_LOGIN):
-                break;
+            case FAZER_LOGIN -> {
+
+            }
 
         }
     }
