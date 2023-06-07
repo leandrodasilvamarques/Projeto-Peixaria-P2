@@ -22,7 +22,7 @@ public class MetodoMain {
         String senhaParaLogin = JOptionPane.showInputDialog("Senha: ");
 
        if(new Gerente().autenticar(emailParaLogin, senhaParaLogin)){
-          String escolhaNoMenu;
+           JOptionPane.showMessageDialog(null,"Logado");
        }
 
 

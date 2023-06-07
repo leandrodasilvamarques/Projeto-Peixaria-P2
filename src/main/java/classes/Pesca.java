@@ -16,7 +16,7 @@ public class Pesca {
         this.tipoDoPeixe = tipoDoPeixe;
         this.quiloPescado = quiloPescado;
         this.barco = barco;
-        barco.getRegistro().adicionarPesca(this);
+        barco.getRegistroDePescas().adicionarPesca(this);
         Valores.incrementarDinheiro(getLucroPesca());
     }
 

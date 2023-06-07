@@ -1,25 +1,22 @@
 package classes;
 
-import classes.setores.SetorEmbarcacao;
-import controladores.Pescaria;
-
 import java.util.Objects;
 
 public class Barco {
 
     private int id;
-    private RegistroDePesca registro;
+    private RegistroDePesca registroDePescas;
 
 
     public Barco(int id) {
     }
 
-    public RegistroDePesca getRegistro() {
-        return registro;
+    public RegistroDePesca getRegistroDePescas() {
+        return registroDePescas;
     }
 
-    public void setRegistro(RegistroDePesca registro) {
-        this.registro = registro;
+    public void setRegistroDePescas(RegistroDePesca registroDePescas) {
+        this.registroDePescas = registroDePescas;
     }
 
     public int getId() {
@@ -35,16 +32,16 @@ public class Barco {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Barco barco = (Barco) o;
-        return id == barco.id && Objects.equals(registro, barco.registro);
+        return id == barco.id && Objects.equals(registroDePescas, barco.registroDePescas);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(registro, id);
+        return Objects.hash(registroDePescas, id);
     }
 
     @Override
     public String toString() {
-        return "Barco{" + "id=" + id + ", registro=" + registro + '}';
+        return "Barco{" + "id=" + id + ", registro=" + registroDePescas + '}';
     }
 }
