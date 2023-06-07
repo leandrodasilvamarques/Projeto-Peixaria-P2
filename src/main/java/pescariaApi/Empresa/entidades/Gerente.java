@@ -1,12 +1,16 @@
-package pescariaApi.Empresa.entidades.Financeiro.Resgistros;
+package pescariaApi.Empresa.entidades;
 
 import ClassesLogin.Login;
 import pescariaApi.classesAbstratas.Funcionario;
+import pescariaApi.classesDeMetodos.MetodosAdminstrativos;
 
-public class Gerente extends Funcionario implements Login {
+public class
+Gerente extends Funcionario implements Login {
 
     private String emailParaLogin = "admin";
     private String senhaParaLogin = "123";
+    public MetodosAdminstrativos metodosAdminstrativos = new MetodosAdminstrativos();
+
     public Gerente() {
     }
 

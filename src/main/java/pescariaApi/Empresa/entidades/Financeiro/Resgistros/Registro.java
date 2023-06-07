@@ -1,9 +1,16 @@
 package pescariaApi.Empresa.entidades.Financeiro.Resgistros;
 
+import pescariaApi.Empresa.entidades.Financeiro.Financeiro;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class Registro {
+
+    public Registro(List<Pesca> pescas) {
+        this.pescas = pescas;
+        Financeiro.adicionarRegistro(this);
+    }
 
     List<Pesca> pescas = new ArrayList<>();
 

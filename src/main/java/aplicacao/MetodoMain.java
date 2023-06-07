@@ -1,7 +1,6 @@
 package aplicacao;
 
-import pescariaApi.Empresa.entidades.Financeiro.Resgistros.Gerente;
-import pescariaApi.Empresa.entidades.Financeiro.Resgistros.Pesca;
+import pescariaApi.Empresa.entidades.Gerente;
 import pescariaApi.Empresa.entidades.Pescaria;
 
 import javax.swing.*;
