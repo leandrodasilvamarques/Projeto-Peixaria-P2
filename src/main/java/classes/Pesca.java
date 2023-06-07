@@ -6,31 +6,33 @@ import java.util.List;
 
 public class Pesca {
 
-    private List<Pescador> pescadores;
+    private double pesoEmQuilos;
     private Peixe tipoDoPeixe;
-    private double quiloPescado;
-    private Barco barco;
 
-    public Pesca(List<Pescador> pescadores, Peixe tipoDoPeixe, double quiloPescado, Barco barco) {
-        this.pescadores = pescadores;
+    public Pesca(Peixe tipoDoPeixe, double pesoEmQuilos) {
         this.tipoDoPeixe = tipoDoPeixe;
-        this.quiloPescado = quiloPescado;
-        this.barco = barco;
-        barco.getRegistroDePescas().adicionarPesca(this);
-        Valores.incrementarDinheiro(getLucroPesca());
+        this.pesoEmQuilos = pesoEmQuilos;
     }
 
-    public double getLucroPesca(){
-        return quiloPescado * tipoDoPeixe.getPrecokg() - pescadores.size() * SetorFinanceiro.valores.getPrecoPescador();
+    public double getPesoEmQuilos() {
+        return pesoEmQuilos;
     }
+
+    public void setPesoEmQuilos(double pesoEmQuilos) {
+        this.pesoEmQuilos = pesoEmQuilos;
+    }
+
+    public Peixe getTipoDoPeixe() {
+        return tipoDoPeixe;
+    }
+
+    public void setTipoDoPeixe(Peixe tipoDoPeixe) {
+        this.tipoDoPeixe = tipoDoPeixe;
+    }
+
 
     @Override
     public String toString() {
-        return "Pesca{" +
-                "pescadores=" + pescadores +
-                ", tipoDoPeixe=" + tipoDoPeixe +
-                ", quiloPescado=" + quiloPescado +
-                ", barco=" + barco +
-                '}';
+        return "Pesca{" + "pesoEmQuilos=" + pesoEmQuilos + ", tipoDoPeixe=" + tipoDoPeixe + '}';
     }
 }

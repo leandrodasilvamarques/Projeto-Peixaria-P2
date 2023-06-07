@@ -1,22 +1,26 @@
 package classes;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class Barco {
 
     private int id;
-    private RegistroDePesca registroDePescas;
+    private List<Pesca> listaPescas;
 
 
     public Barco(int id) {
+        this.id = id;
+        this.listaPescas = new ArrayList<>();
     }
 
-    public RegistroDePesca getRegistroDePescas() {
-        return registroDePescas;
+    public List<Pesca> getListaPescas() {
+        return listaPescas;
     }
 
-    public void setRegistroDePescas(RegistroDePesca registroDePescas) {
-        this.registroDePescas = registroDePescas;
+    public void setListaPescas(List<Pesca> listaPescas) {
+        this.listaPescas = listaPescas;
     }
 
     public int getId() {
@@ -31,17 +35,22 @@ public class Barco {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
+
         Barco barco = (Barco) o;
-        return id == barco.id && Objects.equals(registroDePescas, barco.registroDePescas);
+
+        if (id != barco.id) return false;
+        return Objects.equals(listaPescas, barco.listaPescas);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(registroDePescas, id);
+        int result = id;
+        result = 31 * result + (listaPescas != null ? listaPescas.hashCode() : 0);
+        return result;
     }
 
     @Override
     public String toString() {
-        return "Barco{" + "id=" + id + ", registro=" + registroDePescas + '}';
+        return "Barco #" + getId();
     }
 }

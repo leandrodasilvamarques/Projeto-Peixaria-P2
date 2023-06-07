@@ -1,8 +1,7 @@
 package aplicacao;
 
 import classes.Gerente;
-import classes.Login;
-import controladores.Pescaria;
+import classes.setores.Pescaria;
 
 import javax.swing.*;
 
