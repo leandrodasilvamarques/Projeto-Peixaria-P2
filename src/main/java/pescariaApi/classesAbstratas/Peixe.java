@@ -5,7 +5,7 @@ import pescariaApi.Empresa.entidades.Valores;
 
 public enum Peixe {
     
-    SARDINHA(Financeiro.valores.valorDoQuiloDaSardinha);
+    SARDINHA(Financeiro.valores.getValorDoQuiloDaSardinha());
 
     private double precoKg;
 
