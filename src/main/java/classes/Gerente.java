@@ -1,8 +1,6 @@
-package pescariaApi.Empresa.entidades;
+package classes;
 
-import ClassesLogin.Login;
-import pescariaApi.classesAbstratas.Funcionario;
-import pescariaApi.classesDeMetodos.MetodosAdminstrativos;
+import controladores.MetodosAdminstrativos;
 
 public class
 Gerente extends Funcionario implements Login {

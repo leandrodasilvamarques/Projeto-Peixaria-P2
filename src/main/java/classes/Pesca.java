@@ -1,10 +1,4 @@
-package pescariaApi.Empresa.entidades.Financeiro.Resgistros;
-
-import pescariaApi.Empresa.entidades.Barco;
-import pescariaApi.Empresa.entidades.Financeiro.Financeiro;
-import pescariaApi.Empresa.entidades.Pescador;
-import pescariaApi.Empresa.entidades.Valores;
-import pescariaApi.classesAbstratas.Peixe;
+package classes;
 
 import java.util.List;
 

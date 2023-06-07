@@ -1,4 +1,4 @@
-package ClassesLogin;
+package classes;
 
 public interface Login {
 

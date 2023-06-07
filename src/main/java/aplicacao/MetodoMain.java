@@ -1,7 +1,8 @@
 package aplicacao;
 
-import pescariaApi.Empresa.entidades.Gerente;
-import pescariaApi.Empresa.entidades.Pescaria;
+import classes.Gerente;
+import classes.Login;
+import controladores.Pescaria;
 
 import javax.swing.*;
 
@@ -20,6 +21,7 @@ public class MetodoMain {
         String senhaParaLogin = JOptionPane.showInputDialog("Senha: ");
 
        if(new Gerente().autenticar(emailParaLogin, senhaParaLogin)){
+          JOptionPane.showInputDialog("")
        }
 
 

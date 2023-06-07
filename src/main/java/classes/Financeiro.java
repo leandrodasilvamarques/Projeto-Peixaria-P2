@@ -1,9 +1,5 @@
-package pescariaApi.Empresa.entidades.Financeiro;
+package classes;
 
-import pescariaApi.Empresa.entidades.Financeiro.Resgistros.Registro;
-import pescariaApi.Empresa.entidades.Valores;
-
-import java.lang.module.ResolutionException;
 import java.util.ArrayList;
 
 public class Financeiro {

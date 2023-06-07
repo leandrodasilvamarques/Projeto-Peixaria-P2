@@ -1,4 +1,4 @@
-package pescariaApi.classesAbstratas;
+package classes;
 
 public abstract class Funcionario {
 

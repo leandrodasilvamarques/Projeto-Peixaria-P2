@@ -1,6 +1,6 @@
-package pescariaApi.Empresa.entidades;
+package classes;
 
-import pescariaApi.classesAbstratas.Funcionario;
+import classes.Funcionario;
 
 public class Pescador extends Funcionario {
 

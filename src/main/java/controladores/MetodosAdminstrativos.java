@@ -1,4 +1,4 @@
-package pescariaApi.classesDeMetodos;
+package controladores;
 
 public class MetodosAdminstrativos {
     

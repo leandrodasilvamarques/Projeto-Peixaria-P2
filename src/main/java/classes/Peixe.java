@@ -1,7 +1,4 @@
-package pescariaApi.classesAbstratas;
-
-import pescariaApi.Empresa.entidades.Financeiro.Financeiro;
-import pescariaApi.Empresa.entidades.Valores;
+package classes;
 
 public enum Peixe {
     

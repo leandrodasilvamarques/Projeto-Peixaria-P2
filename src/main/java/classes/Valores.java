@@ -1,4 +1,4 @@
-package pescariaApi.Empresa.entidades;
+package classes;
 
 public class Valores {
 

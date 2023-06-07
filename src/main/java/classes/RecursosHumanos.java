@@ -1,10 +1,11 @@
-package pescariaApi.Empresa.entidades;
+package classes;
 
-import pescariaApi.classesAbstratas.Funcionario;
+import classes.Funcionario;
+import classes.Gerente;
 
 import java.util.ArrayList;
 
-public class Funcionarios {
+public class RecursosHumanos {
 
     ArrayList<Gerente> gerentes = new ArrayList<>();
 

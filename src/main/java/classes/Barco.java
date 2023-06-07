@@ -1,6 +1,6 @@
-package pescariaApi.Empresa.entidades;
+package classes;
 
-import pescariaApi.Empresa.entidades.Financeiro.Resgistros.Registro;
+import controladores.Pescaria;
 
 public class Barco {
 
