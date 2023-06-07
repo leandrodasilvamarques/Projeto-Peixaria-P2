@@ -1,6 +1,6 @@
-package classes;
+package classes.setores.registro;
 
-import classes.setores.SetorFinanceiro;
+import classes.setores.financeiro.SetorFinanceiro;
 
 public enum Peixe {
     

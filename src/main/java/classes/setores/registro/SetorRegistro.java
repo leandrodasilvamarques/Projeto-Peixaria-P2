@@ -1,6 +1,4 @@
-package classes.setores;
-
-import classes.Pesca;
+package classes.setores.registro;
 
 import java.util.ArrayList;
 

@@ -1,5 +1,6 @@
-package classes;
+package classes.setores.recursosHumanos;
 
+import classes.setores.recursosHumanos.Funcionario;
 import controladores.Login;
 import controladores.MetodosAdminstrativos;
 

@@ -1,8 +1,4 @@
-package classes.setores;
-
-import classes.Valores;
-
-import java.util.ArrayList;
+package classes.setores.financeiro;
 
 public class SetorFinanceiro {
 

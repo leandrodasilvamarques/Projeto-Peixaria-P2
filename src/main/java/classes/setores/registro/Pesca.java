@@ -1,4 +1,6 @@
-package classes;
+package classes.setores.registro;
+
+import classes.setores.empresa.Pescaria;
 
 public class Pesca {
 
@@ -8,6 +10,7 @@ public class Pesca {
     public Pesca(Peixe tipoDoPeixe, double pesoEmQuilos) {
         this.tipoDoPeixe = tipoDoPeixe;
         this.pesoEmQuilos = pesoEmQuilos;
+        Pescaria.SETOR_REGISTRO.adicionarPesca(this);
     }
 
     public double getPesoEmQuilos() {

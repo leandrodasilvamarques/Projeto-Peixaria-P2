@@ -1,6 +1,6 @@
-package classes;
+package classes.setores.recursosHumanos;
 
-import classes.Funcionario;
+import classes.setores.recursosHumanos.Funcionario;
 
 public class Pescador extends Funcionario {
 

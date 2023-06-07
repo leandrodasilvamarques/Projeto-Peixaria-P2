@@ -1,6 +1,4 @@
-package classes.setores;
-
-import classes.Barco;
+package classes.setores.embarcacao;
 
 import java.util.ArrayList;
 import java.util.List;

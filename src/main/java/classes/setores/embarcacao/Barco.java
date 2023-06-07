@@ -1,4 +1,7 @@
-package classes;
+package classes.setores.embarcacao;
+
+import classes.setores.registro.Pesca;
+import classes.setores.empresa.Pescaria;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,6 +16,7 @@ public class Barco {
     public Barco(int id) {
         this.id = id;
         this.listaPescas = new ArrayList<>();
+        Pescaria.SETOR_EMBARCACAO.adicionaNovoBarco(this);
     }
 
     public List<Pesca> getListaPescas() {

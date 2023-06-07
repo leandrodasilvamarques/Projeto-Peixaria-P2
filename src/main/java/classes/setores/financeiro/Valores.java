@@ -1,4 +1,4 @@
-package classes;
+package classes.setores.financeiro;
 
 public class Valores {
 

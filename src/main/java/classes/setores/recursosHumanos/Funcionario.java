@@ -1,4 +1,4 @@
-package classes;
+package classes.setores.recursosHumanos;
 
 public abstract class Funcionario {
 

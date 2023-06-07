@@ -1,7 +1,4 @@
-package classes.setores;
-
-import classes.Funcionario;
-import classes.Gerente;
+package classes.setores.recursosHumanos;
 
 import java.util.ArrayList;
 

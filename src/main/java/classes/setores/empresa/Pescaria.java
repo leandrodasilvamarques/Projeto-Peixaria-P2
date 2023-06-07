@@ -1,16 +1,16 @@
-package classes;
+package classes.setores.empresa;
 
-import classes.setores.SetorFinanceiro;
-import classes.setores.SetorRecursosHumanos;
-import classes.setores.SetorEmbarcacao;
-import classes.setores.SetorRegistro;
+import classes.setores.financeiro.SetorFinanceiro;
+import classes.setores.recursosHumanos.SetorRecursosHumanos;
+import classes.setores.embarcacao.SetorEmbarcacao;
+import classes.setores.registro.SetorRegistro;
 
 public class Pescaria {
 
-    public final SetorEmbarcacao SETOR_EMBARCACAO = new SetorEmbarcacao();
-    public final SetorFinanceiro SETOR_FINANCEIRO = new SetorFinanceiro();
-    public final SetorRecursosHumanos SETOR_RECURSOS_HUMANOS = new SetorRecursosHumanos();
-    public final SetorRegistro SETOR_REGISTRO = new SetorRegistro();
+    public static final SetorEmbarcacao SETOR_EMBARCACAO = new SetorEmbarcacao();
+    public static final SetorFinanceiro SETOR_FINANCEIRO = new SetorFinanceiro();
+    public static final SetorRecursosHumanos SETOR_RECURSOS_HUMANOS = new SetorRecursosHumanos();
+    public static final SetorRegistro SETOR_REGISTRO = new SetorRegistro();
 
 
 
