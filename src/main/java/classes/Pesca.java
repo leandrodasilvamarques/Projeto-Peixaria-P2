@@ -1,9 +1,5 @@
 package classes;
 
-import classes.setores.SetorFinanceiro;
-
-import java.util.List;
-
 public class Pesca {
 
     private double pesoEmQuilos;
@@ -30,9 +26,29 @@ public class Pesca {
         this.tipoDoPeixe = tipoDoPeixe;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Pesca pesca = (Pesca) o;
+
+        if (Double.compare(pesca.pesoEmQuilos, pesoEmQuilos) != 0) return false;
+        return tipoDoPeixe == pesca.tipoDoPeixe;
+    }
+
+    @Override
+    public int hashCode() {
+        int result;
+        long temp;
+        temp = Double.doubleToLongBits(pesoEmQuilos);
+        result = (int) (temp ^ (temp >>> 32));
+        result = 31 * result + (tipoDoPeixe != null ? tipoDoPeixe.hashCode() : 0);
+        return result;
+    }
 
     @Override
     public String toString() {
-        return "Pesca{" + "pesoEmQuilos=" + pesoEmQuilos + ", tipoDoPeixe=" + tipoDoPeixe + '}';
+        return "Pesca{" + "pesoEmQuilos=" + pesoEmQuilos + "kg"+  ", tipoDoPeixe=" + tipoDoPeixe + '}';
     }
 }

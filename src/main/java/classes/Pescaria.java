@@ -1,4 +1,4 @@
-package classes.setores;
+package classes;
 
 import classes.setores.SetorFinanceiro;
 import classes.setores.SetorRecursosHumanos;

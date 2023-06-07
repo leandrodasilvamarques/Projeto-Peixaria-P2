@@ -1,7 +1,7 @@
 package aplicacao;
 
 import classes.Gerente;
-import classes.setores.Pescaria;
+import classes.Pescaria;
 
 import javax.swing.*;
 
