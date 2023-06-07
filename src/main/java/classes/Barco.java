@@ -1,13 +1,19 @@
 package classes;
 
+import classes.setores.SetorEmbarcacao;
 import controladores.Pescaria;
 
 public class Barco {
 
-    public Registro registro;
+    private RegistroDePesca registro;
+    private int id;
 
-    public Barco(Registro registro) {
-        this.registro = registro;
-        Pescaria.adicionarBarco(this);
+
+    public Barco(int id) {
+
+    }
+
+    public RegistroDePesca getRegistro() {
+        return registro;
     }
 }

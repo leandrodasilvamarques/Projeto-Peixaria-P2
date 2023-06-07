@@ -11,8 +11,4 @@ public class Pescaria {
     public static final SetorFinanceiro financeiro = new SetorFinanceiro();
     public static final SetorRecursosHumanos funcionarios = new SetorRecursosHumanos();
 
-    public static void adicionarBarco(Barco barco){
-        setorEmbarcacao.listasBarcos.add(barco);
-    }
-
 }

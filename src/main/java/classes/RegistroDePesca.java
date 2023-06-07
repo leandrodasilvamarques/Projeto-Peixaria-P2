@@ -5,14 +5,14 @@ import classes.setores.SetorFinanceiro;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Registro {
+public class RegistroDePesca {
 
-    public Registro(List<Pesca> pescas) {
-        this.pescas = pescas;
+    List<Pesca> pescas;
+
+    public RegistroDePesca() {
+        pescas = new ArrayList<>();
         SetorFinanceiro.adicionarRegistro(this);
     }
-
-    List<Pesca> pescas = new ArrayList<>();
 
     public List<Pesca> getPescas() {
         return pescas;

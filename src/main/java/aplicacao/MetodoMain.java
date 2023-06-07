@@ -11,6 +11,7 @@ public class MetodoMain {
     private static final Pescaria pescaria = new Pescaria();
     private static final int FAZER_LOGIN = 1;
 
+
     public static void main(String[] args) {
 
         String escolhaDeEntrada = JOptionPane.showInputDialog(null,"Seja Bem Vindo(a)!\n" +
@@ -21,7 +22,7 @@ public class MetodoMain {
         String senhaParaLogin = JOptionPane.showInputDialog("Senha: ");
 
        if(new Gerente().autenticar(emailParaLogin, senhaParaLogin)){
-          JOptionPane.showInputDialog("")
+          String escolhaNoMenu;
        }
 
 
