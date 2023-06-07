@@ -1,8 +1,10 @@
 package classes;
 
+import classes.setores.SetorFinanceiro;
+
 public enum Peixe {
     
-    SARDINHA(Financeiro.valores.getValorDoQuiloDaSardinha());
+    SARDINHA(SetorFinanceiro.valores.getValorDoQuiloDaSardinha());
 
     private double precoKg;
 

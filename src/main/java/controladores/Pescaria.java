@@ -1,19 +1,18 @@
 package controladores;
 
 import classes.Barco;
-import classes.Financeiro;
-import classes.RecursosHumanos;
-
-import java.util.ArrayList;
+import classes.setores.SetorFinanceiro;
+import classes.setores.SetorRecursosHumanos;
+import classes.setores.SetorEmbarcacao;
 
 public class Pescaria {
 
-    private static ArrayList<Barco> barcos = new ArrayList<>();
-    public static final  Financeiro financeiro = new Financeiro();
-    public static final RecursosHumanos funcionarios = new RecursosHumanos();
+    private static SetorEmbarcacao setorEmbarcacao;
+    public static final SetorFinanceiro financeiro = new SetorFinanceiro();
+    public static final SetorRecursosHumanos funcionarios = new SetorRecursosHumanos();
 
     public static void adicionarBarco(Barco barco){
-        barcos.add(barco);
+        setorEmbarcacao.listasBarcos.add(barco);
     }
 
 }

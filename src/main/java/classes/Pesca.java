@@ -1,5 +1,7 @@
 package classes;
 
+import classes.setores.SetorFinanceiro;
+
 import java.util.List;
 
 public class Pesca {
@@ -19,7 +21,7 @@ public class Pesca {
     }
 
     public double getLucroPesca(){
-        return quiloPescado * tipoDoPeixe.getPrecokg() - pescadores.size() * Financeiro.valores.getPrecoPescador();
+        return quiloPescado * tipoDoPeixe.getPrecokg() - pescadores.size() * SetorFinanceiro.valores.getPrecoPescador();
     }
 
     @Override

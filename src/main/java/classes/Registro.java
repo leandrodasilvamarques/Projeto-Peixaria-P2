@@ -1,5 +1,7 @@
 package classes;
 
+import classes.setores.SetorFinanceiro;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,7 +9,7 @@ public class Registro {
 
     public Registro(List<Pesca> pescas) {
         this.pescas = pescas;
-        Financeiro.adicionarRegistro(this);
+        SetorFinanceiro.adicionarRegistro(this);
     }
 
     List<Pesca> pescas = new ArrayList<>();
