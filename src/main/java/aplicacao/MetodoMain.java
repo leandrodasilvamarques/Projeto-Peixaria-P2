@@ -1,10 +1,13 @@
 package aplicacao;
 
+import classes.setores.embarcacao.Barco;
+import classes.setores.empresa.Pescaria;
+
 import java.util.Scanner;
 
 public class MetodoMain {
 
-    public static void PrintPainelInicial(){
+    public static void printPainelInicial(){
         System.out.println("Digite uma das opções:\n" +
                 "[1] Login como adminstador\n" +
                 "[2] Login usuario");
@@ -25,7 +28,7 @@ public class MetodoMain {
         }
     }
     public static void main(String[] args) {
-        PrintPainelInicial();
+        printPainelInicial();
         decisaoPainelInicial(respostaPainelInicial());
     }
 }
