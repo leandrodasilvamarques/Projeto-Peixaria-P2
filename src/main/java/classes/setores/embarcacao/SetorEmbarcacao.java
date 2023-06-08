@@ -1,25 +1,56 @@
 package classes.setores.embarcacao;
 
+import classes.setores.registro.Pesca;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
 public class SetorEmbarcacao {
 
-    private List<Barco> listaDeBarcos;
+    //atributos
+    private ArrayList<Barco> listaDeBarcos;
+    //
 
+    //construtor
     public SetorEmbarcacao(){
         listaDeBarcos = new ArrayList<>();
     }
+    //
 
+    //getters setters
     public List<Barco> getListaDeBarcos() {
         return listaDeBarcos;
     }
-
-    public void setListaDeBarcos(List<Barco> listaDeBarcos) {
+    public void setListaDeBarcos(ArrayList<Barco> listaDeBarcos) {
         this.listaDeBarcos = listaDeBarcos;
     }
+    public Barco getBarcoPorPesca(Pesca pesca){
 
+        for (Barco barco: listaDeBarcos){
+            if (barco.getListaPescas().contains(pesca)){
+                return barco;
+            }
+        }
+        return null;
+    }
+    public Barco getBarcoPorId(int id){
+        for (Barco barco : listaDeBarcos) {
+            if (barco.getId() == id){
+                return barco;
+            }
+        }
+        return null;
+    }
+    //
+
+    //metodos para aplicação
+    public void adicionaNovoBarco(Barco barco){
+        listaDeBarcos.add(barco);
+    }
+    //
+
+    //equals hash toString
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -29,29 +60,17 @@ public class SetorEmbarcacao {
 
         return Objects.equals(listaDeBarcos, that.listaDeBarcos);
     }
-
-
     @Override
     public int hashCode() {
         return listaDeBarcos != null ? listaDeBarcos.hashCode() : 0;
     }
-
     @Override
     public String toString() {
         return "SetorEmbarcacao{" + "listaBarcos=" + getListaDeBarcos() + '}';
     }
+    //
 
-    public void adicionaNovoBarco(Barco barco){
-        listaDeBarcos.add(barco);
-    }
 
-    public Barco barcoDeId(int id){
-        for (Barco barco : listaDeBarcos) {
-            if (barco.getId() == id){
-                return barco;
-            }
-        }
-        return null;
-    }
+
 
 }

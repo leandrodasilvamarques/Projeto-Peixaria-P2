@@ -1,16 +1,21 @@
 package classes.setores.registro;
 
 import classes.setores.empresa.Pescaria;
+import classes.setores.recursosHumanos.Funcionario;
+
+import java.util.ArrayList;
 
 public class Pesca {
 
     private double pesoEmQuilos;
     private Peixe tipoDoPeixe;
+    private ArrayList<Funcionario> funcionariosDaPesca = new ArrayList<>();
 
-    public Pesca(Peixe tipoDoPeixe, double pesoEmQuilos) {
+    public Pesca(ArrayList<Funcionario> funcionariosDaPesca, Peixe tipoDoPeixe, double pesoEmQuilos) {
         this.tipoDoPeixe = tipoDoPeixe;
         this.pesoEmQuilos = pesoEmQuilos;
         Pescaria.SETOR_REGISTRO.adicionarPesca(this);
+        this.funcionariosDaPesca.addAll(funcionariosDaPesca);
     }
 
     public double getPesoEmQuilos() {
@@ -52,6 +57,10 @@ public class Pesca {
 
     @Override
     public String toString() {
-        return "Pesca{" + "pesoEmQuilos=" + pesoEmQuilos + "kg"+  ", tipoDoPeixe=" + tipoDoPeixe + '}';
+        return "Pesca{" +
+                "pesoEmQuilos=" + pesoEmQuilos +
+                ", tipoDoPeixe=" + tipoDoPeixe +
+                ", funcionariosDaPesca=" + funcionariosDaPesca +
+                '}';
     }
 }
