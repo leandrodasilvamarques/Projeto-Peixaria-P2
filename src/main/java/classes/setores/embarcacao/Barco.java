@@ -43,7 +43,7 @@ public class Barco {
     public void adicionarNovaPesca(ArrayList<Funcionario> funcionariosPesca, Peixe tipoPeixe, double pesoQuiloPescado){
         listaPescas.add(new Pesca(funcionariosPesca, tipoPeixe, pesoQuiloPescado));
     }
-
+    //
 
     // equals hashcode toString
     @Override

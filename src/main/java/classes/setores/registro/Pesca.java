@@ -7,33 +7,37 @@ import java.util.ArrayList;
 
 public class Pesca {
 
+    //atributos
     private double pesoEmQuilos;
     private Peixe tipoDoPeixe;
     private ArrayList<Funcionario> funcionariosDaPesca = new ArrayList<>();
+    //
 
+    //construtor
     public Pesca(ArrayList<Funcionario> funcionariosDaPesca, Peixe tipoDoPeixe, double pesoEmQuilos) {
         this.tipoDoPeixe = tipoDoPeixe;
         this.pesoEmQuilos = pesoEmQuilos;
         Pescaria.SETOR_REGISTRO.adicionarPesca(this);
         this.funcionariosDaPesca.addAll(funcionariosDaPesca);
     }
+    //
 
+    //getters setters
     public double getPesoEmQuilos() {
         return pesoEmQuilos;
     }
-
     public void setPesoEmQuilos(double pesoEmQuilos) {
         this.pesoEmQuilos = pesoEmQuilos;
     }
-
     public Peixe getTipoDoPeixe() {
         return tipoDoPeixe;
     }
-
     public void setTipoDoPeixe(Peixe tipoDoPeixe) {
         this.tipoDoPeixe = tipoDoPeixe;
     }
+    //
 
+    //overrriders
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -44,7 +48,6 @@ public class Pesca {
         if (Double.compare(pesca.pesoEmQuilos, pesoEmQuilos) != 0) return false;
         return tipoDoPeixe == pesca.tipoDoPeixe;
     }
-
     @Override
     public int hashCode() {
         int result;
@@ -54,7 +57,6 @@ public class Pesca {
         result = 31 * result + (tipoDoPeixe != null ? tipoDoPeixe.hashCode() : 0);
         return result;
     }
-
     @Override
     public String toString() {
         return "Pesca{" +
@@ -63,4 +65,5 @@ public class Pesca {
                 ", funcionariosDaPesca=" + funcionariosDaPesca +
                 '}';
     }
+    //
 }
