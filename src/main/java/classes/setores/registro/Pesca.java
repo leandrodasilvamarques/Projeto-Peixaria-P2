@@ -4,6 +4,7 @@ import classes.setores.empresa.Pescaria;
 import classes.setores.recursosHumanos.Funcionario;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 public class Pesca {
 
@@ -11,10 +12,12 @@ public class Pesca {
     private double pesoEmQuilos;
     private Peixe tipoDoPeixe;
     private ArrayList<Funcionario> funcionariosDaPesca = new ArrayList<>();
+    private Date dataDaPesca = new Date();
     //
 
     //construtor
-    public Pesca(ArrayList<Funcionario> funcionariosDaPesca, Peixe tipoDoPeixe, double pesoEmQuilos) {
+    public Pesca(ArrayList<Funcionario>
+            funcionariosDaPesca, Peixe tipoDoPeixe, double pesoEmQuilos) {
         this.tipoDoPeixe = tipoDoPeixe;
         this.pesoEmQuilos = pesoEmQuilos;
         Pescaria.SETOR_REGISTRO.adicionarPesca(this);
@@ -23,6 +26,9 @@ public class Pesca {
     //
 
     //getters setters
+    public Date getDataDaPesca() {
+        return dataDaPesca;
+    }
     public double getPesoEmQuilos() {
         return pesoEmQuilos;
     }
@@ -36,6 +42,10 @@ public class Pesca {
         this.tipoDoPeixe = tipoDoPeixe;
     }
     //
+
+    public String toStringDataDaPesca() {
+        return "Data da pesca: " + dataDaPesca;
+    }
 
     //overrriders
     @Override
@@ -56,14 +66,6 @@ public class Pesca {
         result = (int) (temp ^ (temp >>> 32));
         result = 31 * result + (tipoDoPeixe != null ? tipoDoPeixe.hashCode() : 0);
         return result;
-    }
-    @Override
-    public String toString() {
-        return "Pesca{" +
-                "pesoEmQuilos=" + pesoEmQuilos +
-                ", tipoDoPeixe=" + tipoDoPeixe +
-                ", funcionariosDaPesca=" + funcionariosDaPesca +
-                '}';
     }
     //
 }
