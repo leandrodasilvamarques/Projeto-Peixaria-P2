@@ -15,6 +15,9 @@ public class SetorRegistro {
     public static Barco getBarcoPorPesca(Pesca pesca){
         return Pescaria.SETOR_EMBARCACAO.getBarcoPorPesca(pesca);
     }
+    public static String getRegistros(){
+        return Pescaria.SETOR_EMBARCACAO.getListaDeBarcos().toString();
+    }
     //
 
     //metodos para aplicação
