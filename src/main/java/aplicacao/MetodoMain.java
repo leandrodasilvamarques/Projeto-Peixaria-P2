@@ -1,29 +1,31 @@
 package aplicacao;
 
-import classes.setores.recursosHumanos.Gerente;
-import classes.setores.empresa.Pescaria;
-
-import javax.swing.*;
+import java.util.Scanner;
 
 public class MetodoMain {
 
-    private static final Pescaria pescaria = new Pescaria();
-    private static final int FAZER_LOGIN = 1;
+    public static void PrintPainelInicial(){
+        System.out.println("Digite uma das opções:\n" +
+                "[1] Login como adminstador\n" +
+                "[2] Login usuario");
+    }
+    public static int respostaPainelInicial(){
+        Scanner input = new Scanner(System.in);
 
+        int resposta = input.nextInt();
+        input.nextLine();
+        return resposta;
+    }
 
+    public static void decisaoPainelInicial(int resposta){
+        switch (resposta){
+            case (1) -> System.out.println("Login com admin");
+
+            case (2) -> System.out.println("Login como usuario");
+        }
+    }
     public static void main(String[] args) {
-
-        String escolhaDeEntrada = JOptionPane.showInputDialog(null,"Seja Bem Vindo(a)!\n" +
-                "[1] FAZER LOGIN\n" +
-                "[2] SAIR\n");
-
-        String emailParaLogin = JOptionPane.showInputDialog("Email: ");
-        String senhaParaLogin = JOptionPane.showInputDialog("Senha: ");
-
-       if(new Gerente().autenticar(emailParaLogin, senhaParaLogin)){
-           JOptionPane.showMessageDialog(null,"Logado");
-       }
-
-
+        PrintPainelInicial();
+        decisaoPainelInicial(respostaPainelInicial());
     }
 }
