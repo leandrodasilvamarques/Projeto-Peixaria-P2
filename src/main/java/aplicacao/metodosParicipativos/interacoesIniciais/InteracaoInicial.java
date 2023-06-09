@@ -1,5 +1,7 @@
-package aplicacao.metodosParicipativos;
+package aplicacao.metodosParicipativos.interacoesIniciais;
 
+import aplicacao.metodosParicipativos.aplicacaoAdmin.AplicacaoAdmin;
+import aplicacao.metodosParicipativos.aplicacaoUsuario.AplicacaoUsuario;
 import classes.setores.recursosHumanos.Gerente;
 
 import javax.swing.*;
@@ -8,7 +10,7 @@ public class InteracaoInicial {
 
     public static void login(){
 
-        UserView UI = new UserView();
+        UserViewInicial UI = new UserViewInicial();
         boolean escolhaSair = false;
 
         do {

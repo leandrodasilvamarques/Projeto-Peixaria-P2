@@ -1,11 +1,11 @@
-package aplicacao.metodosParicipativos;
+package aplicacao.metodosParicipativos.interacoesIniciais;
 
 // classe User Interface, com os métodos para printar na tela
 
 
 import javax.swing.*;
 
-public class UserView {
+public class UserViewInicial {
 
     public static void printaTelaPrincipal(){
         JOptionPane.showInputDialog(null, "[1]\n" +

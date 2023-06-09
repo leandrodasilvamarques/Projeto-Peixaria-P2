@@ -1,6 +1,6 @@
 package aplicacao.aplicacaoPrincipal;
 
-import aplicacao.metodosParicipativos.InteracaoInicial;
+import aplicacao.metodosParicipativos.interacoesIniciais.InteracaoInicial;
 
 public class AplicacaoPeixaria {
 
