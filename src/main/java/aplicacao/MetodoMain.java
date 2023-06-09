@@ -20,12 +20,15 @@ public class MetodoMain {
                 case 0 -> {
                     if (new Gerente().autenticar(login,senha)){
                         escolhaSair = true;
+                    } else {
+                        UI.printMensagemDeErroNoLogin();
                     }
                 }
                 case 1 -> {
-                    JOptionPane.showMessageDialog(null, "Tentativa de Login cancelada. Tente novamente!");
+                    UI.printTenteNovamente();
                 }
                 case 2 ->{
+                    UI.printMensagemDeErroNoLogin();
                     escolhaSair = true;
                 }
             }

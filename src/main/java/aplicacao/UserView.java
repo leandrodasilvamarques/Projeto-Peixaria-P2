@@ -14,4 +14,12 @@ public class UserView {
                 "[4]\n" +
                 "[5]\n");
     }
+
+    public void printMensagemDeErroNoLogin() {
+        JOptionPane.showMessageDialog(null, "Tentativa de Login cancelada. Reinicie o programa!");
+    }
+
+    public void printTenteNovamente() {
+        JOptionPane.showMessageDialog(null, "Tentativa de Login cancelada. Tente novamente!");
+    }
 }
