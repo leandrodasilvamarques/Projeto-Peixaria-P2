@@ -4,12 +4,20 @@ import classes.setores.recursosHumanos.Gerente;
 
 import javax.swing.*;
 
-public class MetodoMain {
+public class UserInteration {
 
-    static UserView UI = new UserView();
-    static boolean escolhaSair = false;
+    public static void aplicacaoUsuario(){
 
-    public static void main(String[] args) {
+    }
+
+    public static void aplicacaoAdmin(){
+
+    }
+
+    public static void login(){
+
+        UserView UI = new UserView();
+        boolean escolhaSair = false;
 
         do {
             String login = JOptionPane.showInputDialog(null, "Login:");
@@ -33,5 +41,24 @@ public class MetodoMain {
                 }
             }
         } while (!escolhaSair);
+
     }
+
+    public static void aplicacaoAdminOuUsuario(){
+
+        boolean admin = false;
+
+        if (admin == true){
+
+            aplicacaoAdmin();
+
+        }
+        else{
+
+            aplicacaoUsuario();
+
+        }
+
+    }
+
 }

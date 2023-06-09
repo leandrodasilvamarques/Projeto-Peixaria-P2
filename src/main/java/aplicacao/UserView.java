@@ -22,4 +22,6 @@ public class UserView {
     public void printTenteNovamente() {
         JOptionPane.showMessageDialog(null, "Tentativa de Login cancelada. Tente novamente!");
     }
+
+
 }
