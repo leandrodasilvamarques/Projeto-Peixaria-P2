@@ -6,22 +6,29 @@ import javax.swing.*;
 
 public class MetodoMain {
 
-    static UserInterface UI = new UserInterface();
+    static UserView UI = new UserView();
+    static boolean escolhaSair = false;
 
     public static void main(String[] args) {
 
-        boolean autenticado = false;
         do {
             String login = JOptionPane.showInputDialog(null, "Login:");
             String senha = JOptionPane.showInputDialog(null, "Senha:");
+            int escolhaDoUsuarioNoLogin = JOptionPane.showConfirmDialog(null, "Deseja continuar?");
 
-            if (new Gerente().autenticar(login, senha)) {
-                autenticado = true;
-                UI.printaTelaPrincipal();
-            } else {
-                JOptionPane.showMessageDialog(null, "Login ou senha inválidos. Tente novamente.");
+            switch (escolhaDoUsuarioNoLogin){
+                case 0 -> {
+                    if (new Gerente().autenticar(login,senha)){
+                        escolhaSair = true;
+                    }
+                }
+                case 1 -> {
+                    JOptionPane.showMessageDialog(null, "Tentativa de Login cancelada. Tente novamente!");
+                }
+                case 2 ->{
+                    escolhaSair = true;
+                }
             }
-
-        } while (!autenticado);
+        } while (!escolhaSair);
     }
 }

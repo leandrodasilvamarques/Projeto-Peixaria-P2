@@ -5,7 +5,7 @@ package aplicacao;
 import javax.swing.*;
 import java.util.Scanner;
 
-public class UserInterface {
+public class UserView {
 
     public void printaTelaPrincipal(){
         JOptionPane.showInputDialog(null, "[1]\n" +
