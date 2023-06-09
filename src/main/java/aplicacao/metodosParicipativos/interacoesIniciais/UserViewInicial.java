@@ -23,15 +23,6 @@ public class UserViewInicial {
         JOptionPane.showMessageDialog(null, "Tentativa de Login cancelada. Tente novamente!");
     }
 
-    public static void printOpcoesAdmin(){
-
-        System.out.println("[1] Setor Embarcação\n" +
-                "[2]Setor Financeiro\n" +
-                "[3]Setor Recursos Humanos\n" +
-                "[4]Setor de Registros\n");
-
-    }
-
     public static void printOpcoesUsuario(){
 
         System.out.println("[1]\n" +

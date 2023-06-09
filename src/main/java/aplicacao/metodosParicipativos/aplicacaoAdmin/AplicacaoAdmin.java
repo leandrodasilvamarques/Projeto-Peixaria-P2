@@ -1,6 +1,7 @@
 package aplicacao.metodosParicipativos.aplicacaoAdmin;
 
-import aplicacao.metodosParicipativos.interacoesIniciais.UserViewInicial;
+import classes.setores.embarcacao.Barco;
+import classes.setores.empresa.Pescaria;
 
 import java.util.Scanner;
 
@@ -9,8 +10,8 @@ public class AplicacaoAdmin {
 
     public static void aplicacaoAdmin() {
 
-        UserViewInicial.printOpcoesAdmin();
-        decisaoOpcoesAdmin(recebeOpcoesAdmin());
+        UserViewAdmin.printOpcoesAdmin();
+        decisaoOpcoesAdmin(recebeInt());
 
     }
 
@@ -24,7 +25,8 @@ public class AplicacaoAdmin {
         switch (opcao){
             case(SETOR_EMBARCACAO):
 
-
+            UserViewAdmin.printOpcoesSetorEmbarcacao();
+            decisaoOpcoesAdminEmbarcacao(recebeInt());
 
             break;
 
@@ -42,8 +44,33 @@ public class AplicacaoAdmin {
         }
 
     }
+    public static void decisaoOpcoesAdminEmbarcacao(int opcao){
 
-    public static int recebeOpcoesAdmin(){
+        final int MOSTRAR_BARCOS = 1;
+        final int CADASTRAR_NOVO_BARCO = 2;
+
+        switch (opcao){
+
+            case(MOSTRAR_BARCOS):
+
+                System.out.println(Pescaria.SETOR_EMBARCACAO.getListaDeBarcos());
+
+            break;
+
+            case(CADASTRAR_NOVO_BARCO):
+
+                System.out.println("Digite ID do barco: ");
+                int id = recebeInt();
+
+                Pescaria.SETOR_EMBARCACAO.adicionaNovoBarco(new Barco(id));
+
+            break;
+
+        }
+
+    }
+
+    public static int recebeInt(){
 
         Scanner input = new Scanner(System.in);
 
