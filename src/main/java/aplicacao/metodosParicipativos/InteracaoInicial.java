@@ -1,18 +1,10 @@
-package aplicacao;
+package aplicacao.metodosParicipativos;
 
 import classes.setores.recursosHumanos.Gerente;
 
 import javax.swing.*;
 
-public class UserInteration {
-
-    public static void aplicacaoUsuario(){
-
-    }
-
-    public static void aplicacaoAdmin(){
-
-    }
+public class InteracaoInicial {
 
     public static void login(){
 
@@ -50,15 +42,14 @@ public class UserInteration {
 
         if (admin == true){
 
-            aplicacaoAdmin();
+            AplicacaoAdmin.aplicacaoAdmin();
 
         }
         else{
 
-            aplicacaoUsuario();
+            AplicacaoUsuario.aplicacaoUsuario();
 
         }
-
     }
 
 }
