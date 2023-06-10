@@ -13,7 +13,7 @@ public class SetorRegistro {
     //
 
     //getters setters
-    public static double getTotalDeQuilosDeTodasAsPescas() {
+    public static double getTotalDeQuilosDePeixeDeTodasAsPescas() {
         double somaQuilos = 0;
         for (Pesca percorrePesca : arrayListDeTodoAsPescas) {
             if (percorrePesca.getPesoEmQuilos() > 0) {
@@ -41,6 +41,8 @@ public class SetorRegistro {
     public static void adicionarPesca(Pesca pesca) {
         arrayListDeTodoAsPescas.add(pesca);
     }
-    public static void subtrai
+    public static double subtracaoDeQuilosDePeixe(double quantidadeParaSubtrair){
+        return getTotalDeQuilosDePeixeDeTodasAsPescas() - quantidadeParaSubtrair;
+    }
     //
 }

@@ -25,6 +25,18 @@ public class AplicacaoUsuario {
 
     }
 
+    public static void case1RealizarCompras(){
+        System.out.println("Quantos quilos: ");
+        double subtracaoDeQuilos = recebeDouble();
+
+        SetorRegistro.subtracaoDeQuilosDePeixe(subtracaoDeQuilos);
+        System.out.println("Compra realizada e estoque subtraido...");
+    }
+
+    public static void case2VisualizarPreco(){
+
+    }
+
     public static void decisaoOpcoesAdmin(int opcao){
 
         final int REALIZAR_COMPRAS = 1;
@@ -33,12 +45,8 @@ public class AplicacaoUsuario {
 
         switch (opcao){
             case REALIZAR_COMPRAS ->{
-                System.out.println("Quantos quilos: ");
-                double subtracaoDeQuilos = recebeDouble();
-
-                SetorRegistro.getTotalDeQuilosDeTodasAsPescas() - subtracaoDeQuilos;
+                case1RealizarCompras();
             }
-
 
             case VISUALIZAR_PRECOS->{
 
