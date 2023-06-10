@@ -30,7 +30,7 @@ public class AplicacaoUsuario {
     }
 
     public static void case2VisualizarPreco() {
-        System.out.println(Valores.getValorDoQuiloDaSardinha());
+        System.out.println(Pescaria.SETOR_FINANCEIRO.valores.getValorDoQuiloDaSardinha());
     }
 
     public static double case3SimularDesconto() {

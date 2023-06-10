@@ -34,16 +34,18 @@ public class AplicacaoAdmin {
     //coração da aplicação
     public static void aplicacaoAdmin() {
 
-        decisaoOpcoesAdmin(recebeInt());
+        sistemaAdmin();
 
     }
-    public static void decisaoOpcoesAdmin(int opcao){
+    public static void sistemaAdmin(){
 
         boolean sairOpcoesAdmin = false;
 
         do {
 
             UserViewAdmin.printOpcoesAdmin();
+
+            int opcao = input.nextInt();
 
             final int SETOR_EMBARCACAO = 1;
             final int SETOR_FINANCEIRO = 2;
@@ -54,25 +56,25 @@ public class AplicacaoAdmin {
             switch (opcao) {
                 case (SETOR_EMBARCACAO):
 
-                    decisaoOpcoesAdminEmbarcacao(recebeInt());
+                    opcoesAdminEmbarcacao();
 
                     break;
 
                 case (SETOR_FINANCEIRO):
 
-                    decisaoOpcoesSetorFinanceiro(recebeInt());
+                    opcoesSetorFinanceiro();
 
                     break;
 
                 case (SETOR_RECURSOS_HUMANOS):
 
-                    decisaoOpcoesSetorRcursosHumanos(recebeInt());
+                    opcoesSetorRecursosHumanos();
 
                     break;
 
                 case (SETOR_DE_REGISTRO):
 
-                    decisaoOpcoesSetorRegistro(recebeInt());
+                    opcoesSetorRegistro();
 
                     break;
 
@@ -87,13 +89,15 @@ public class AplicacaoAdmin {
     //
 
     //embarcação
-    public static void decisaoOpcoesAdminEmbarcacao(int opcao){
+    public static void opcoesAdminEmbarcacao(){
 
         boolean voltarOpcoresEmbarcacao = false;
 
         do {
 
             UserViewAdmin.printOpcoesSetorEmbarcacao();
+
+            int opcao = input.nextInt();
 
             final int MOSTRAR_BARCOS = 1;
             final int CADASTRAR_NOVO_BARCO = 2;
@@ -186,13 +190,13 @@ public class AplicacaoAdmin {
     //
 
     //setor financeiro
-    public static void decisaoOpcoesSetorFinanceiro(int opcao){
+    public static void opcoesSetorFinanceiro(){
 
         boolean voltarOpcoesFinancneiro = false;
 
         do {
-
             UserViewAdmin.printOpcoesSetorFinanceiro();
+            int opcao = input.nextInt();
 
             final int PRECO_BASE_FUNCIONARIO = 1;
             final int DEFINIR_VALOR_BASE_FUNCIONARIO = 2;
@@ -276,13 +280,13 @@ public class AplicacaoAdmin {
     //
 
     //setor recursos humanos
-    private static void decisaoOpcoesSetorRcursosHumanos(int opcao) {
+    private static void opcoesSetorRecursosHumanos() {
 
         boolean voltarOpcoesRecursosHumanos = false;
 
         do {
-
             UserViewAdmin.printOpcoesSetorRecursosHumanos();
+            int opcao = input.nextInt();
 
             final int EXIBIR_LISTA_DE_FUNCIONARIOS = 1;
             final int EXIBIR_LISTA_DE_PESCADORES = 2;
@@ -410,13 +414,13 @@ public class AplicacaoAdmin {
     //
 
     //setor registro
-    private static void decisaoOpcoesSetorRegistro(int opcao) {
+    private static void opcoesSetorRegistro() {
 
         boolean voltarOpcoesSetorRegistro = false;
 
         do {
-
             UserViewAdmin.printOpcoesSetorRegistro();
+            int opcao = input.nextInt();
 
             final int HISTORICO_TOTAL_PEIXARIA = 1;
             final int PESCAS_DE_DATA = 2;
@@ -452,10 +456,5 @@ public class AplicacaoAdmin {
         }while(voltarOpcoesSetorRegistro == false);
     }
     //
-
-
-
-
-
 
 }

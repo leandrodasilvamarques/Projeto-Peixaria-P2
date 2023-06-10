@@ -46,7 +46,7 @@ public class InteracaoInicial {
 
         if (realizaEntradaNoSistema() == 1) {
 
-            AplicacaoAdmin.aplicacaoAdmin();
+            AplicacaoAdmin.sistemaAdmin();
 
         } else {
 
