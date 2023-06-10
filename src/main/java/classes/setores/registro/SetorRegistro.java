@@ -2,7 +2,6 @@ package classes.setores.registro;
 
 import classes.setores.embarcacao.Barco;
 import classes.setores.empresa.Pescaria;
-import classes.setores.recursosHumanos.Funcionario;
 import classes.setores.recursosHumanos.Pescador;
 
 import java.util.ArrayList;
@@ -11,9 +10,19 @@ import java.util.Date;
 public class SetorRegistro {
     //atributos
     private ArrayList<Pesca> arrayListDeTodoAsPescas = new ArrayList<>();
+    private ArrayList<SetorRegistro> historicosDosPescadores = new ArrayList<>();
     //
 
     //getters setters
+    public double simulaGetTotalDeQuilosDePeixeDeTodasAsPescas() {
+        double somaQuilos = 0;
+        for (Pesca percorrePesca : arrayListDeTodoAsPescas) {
+            if (percorrePesca.getPesoEmQuilos() > 0) {
+                somaQuilos += percorrePesca.getPesoEmQuilos();
+            }
+        }
+        return somaQuilos;
+    }
     public double getTotalDeQuilosDePeixeDeTodasAsPescas() {
         double somaQuilos = 0;
         for (Pesca percorrePesca : arrayListDeTodoAsPescas) {
@@ -30,8 +39,17 @@ public class SetorRegistro {
             }
         }
     }
+    public Barco getBarcoPorPesca(Pesca pesca) {
+        return Pescaria.SETOR_EMBARCACAO.getBarcoPorPesca(pesca);
+    }
     public String getRegistros() {
         return Pescaria.SETOR_EMBARCACAO.getListaDeBarcos().toString();
+    }
+    public ArrayList<SetorRegistro> getHistoricosDosPescadores() {
+        return historicosDosPescadores;
+    }
+    public void setHistoricosDosPescadores(ArrayList<SetorRegistro> historicosDosPescadores) {
+        this.historicosDosPescadores = historicosDosPescadores;
     }
     //
 
@@ -39,8 +57,16 @@ public class SetorRegistro {
     public void adicionarPesca(Pesca pesca) {
         arrayListDeTodoAsPescas.add(pesca);
     }
+    public double simulacaoSubtracaoDeQuilosDePeixe(double quantidadeParaSubtrair) {
+        return simulaGetTotalDeQuilosDePeixeDeTodasAsPescas() - quantidadeParaSubtrair;
+    }
     public double subtracaoDeQuilosDePeixe(double quantidadeParaSubtrair){
         return getTotalDeQuilosDePeixeDeTodasAsPescas() - quantidadeParaSubtrair;
+    }
+    public void adicionarHistoricoDePescador(SetorRegistro registroPescador){
+
+        historicosDosPescadores.add(registroPescador);
+
     }
     //
 
