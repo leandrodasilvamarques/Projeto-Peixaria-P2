@@ -14,7 +14,17 @@ public class UserViewAdmin {
     public static void printOpcoesSetorEmbarcacao(){
 
         System.out.println("[1] Mostrar Barcos\n" +
-                "[2] Cadastrar Novo Barco\n");
+                "[2]Cadastrar Novo Barco\n");
+
+    }
+
+    public static void printOpcoesSetorFinanceiro(){
+
+        System.out.println("[1]Dinheiro em caixa\n" +
+                "[2]Preco de um pescador\n" +
+                "[3]Valor do quilo da sardinha\n" +
+                "[4]Definir novo preço por pescaodr\n" +
+                "[5]Definir Valor do quilo da Sardinha");
 
     }
 
