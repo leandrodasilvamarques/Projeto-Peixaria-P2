@@ -6,6 +6,7 @@ public class SetorRecursosHumanos {
 
     //atributos
     ArrayList<Funcionario> todosFuncionarios;
+    ArrayList<Pescador> todosPescadores;
     //
 
     //getters setters
@@ -19,11 +20,26 @@ public class SetorRecursosHumanos {
         }
         return null;
     }
+    public ArrayList<Funcionario> getTodosFuncionarios() {
+        return todosFuncionarios;
+    }
+    public void setTodosFuncionarios(ArrayList<Funcionario> todosFuncionarios) {
+        this.todosFuncionarios = todosFuncionarios;
+    }
+    public ArrayList<Pescador> getTodosPescadores() {
+        return todosPescadores;
+    }
+    public void setTodosPescadores(ArrayList<Pescador> todosPescadores) {
+        this.todosPescadores = todosPescadores;
+    }
     //
 
     //metodos para aplicação
     public void adicionarFuncionario(Funcionario funcionario){
         todosFuncionarios.add(funcionario);
+    }
+    public void adicionarPescador(Pescador pescador){
+        todosPescadores.add(pescador);
     }
     //
 }
