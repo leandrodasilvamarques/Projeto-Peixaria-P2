@@ -1,7 +1,6 @@
 package classes.setores.registro;
 
 import classes.setores.empresa.Pescaria;
-import classes.setores.recursosHumanos.Funcionario;
 import classes.setores.recursosHumanos.Pescador;
 
 import java.util.ArrayList;
@@ -42,6 +41,19 @@ public class Pesca {
     public void setTipoDoPeixe(Peixe tipoDoPeixe) {
         this.tipoDoPeixe = tipoDoPeixe;
     }
+    public double getLucroPesca(){
+
+        return getRendaBrutPesca() - getDespesaPesca();
+
+    }
+    public double getDespesaPesca(){
+
+        return (Pescaria.SETOR_RECURSOS_HUMANOS.getPagamentoTotalPescadores(funcionariosDaPesca));
+
+    }
+    public double getRendaBrutPesca(){
+        return tipoDoPeixe.getPrecokg() * pesoEmQuilos;
+    }
     //
 
     //metodos para aplicação
@@ -51,12 +63,17 @@ public class Pesca {
 
             funcionarios.adicinarPescaAoRegistro(this);
         }
-
     }
     //
 
-    public String toStringDataDaPesca() {
-        return "Data da pesca: " + dataDaPesca;
+    @Override
+    public String toString() {
+        return "Pesca{" +
+                "pesoEmQuilos=" + pesoEmQuilos +
+                ", tipoDoPeixe=" + tipoDoPeixe +
+                ", funcionariosDaPesca=" + funcionariosDaPesca +
+                ", dataDaPesca=" + dataDaPesca +
+                '}';
     }
 
     //overrriders

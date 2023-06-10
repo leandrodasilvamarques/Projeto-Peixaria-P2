@@ -16,7 +16,6 @@ public class Pescador extends Funcionario {
     //construtores
     public Pescador(String nome, String cpf) {
         super(nome, cpf, "Pescador");
-        Pescaria.SETOR_RECURSOS_HUMANOS.adicionarFuncionario(this);
         Pescaria.SETOR_RECURSOS_HUMANOS.adicionarPescador(this);
     }
     //

@@ -43,6 +43,15 @@ public class SetorRecursosHumanos {
         return null;
 
     }
+    public double getPagamentoTotalPescadores(ArrayList<Pescador> funcionarios){
+
+        double pagamentoTotal = 0;
+
+        for (Funcionario funcionarioPorfuncionario: funcionarios){
+            pagamentoTotal+= funcionarioPorfuncionario.getSalario();
+        }
+        return pagamentoTotal;
+    }
     //
 
     //metodos para aplicação

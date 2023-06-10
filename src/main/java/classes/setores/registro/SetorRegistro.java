@@ -51,6 +51,38 @@ public class SetorRegistro {
     public void setHistoricosDosPescadores(ArrayList<SetorRegistro> historicosDosPescadores) {
         this.historicosDosPescadores = historicosDosPescadores;
     }
+    public double getRendaBrutaTotal(){
+
+        double valor = 0;
+
+        for (Pesca pescas: arrayListDeTodoAsPescas){
+
+            valor+= pescas.getRendaBrutPesca();
+        }
+        return valor;
+    }
+    public double getRendaLiquidaTotal(){
+
+        double valor = 0;
+
+        for (Pesca pescas: arrayListDeTodoAsPescas){
+
+            valor+= pescas.getLucroPesca();
+        }
+        return valor;
+
+    }
+    public double getDespesaTotal(){
+
+        double valor = 0;
+
+        for (Pesca pescas: arrayListDeTodoAsPescas){
+
+            valor+= pescas.getDespesaPesca();
+        }
+        return valor;
+
+    }
     //
 
     //metodos para aplicação
@@ -69,7 +101,6 @@ public class SetorRegistro {
 
     }
     //
-
 
     @Override
     public String toString() {

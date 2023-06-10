@@ -2,7 +2,6 @@ package aplicacao.metodosParicipativos.aplicacaoAdmin;
 
 import classes.setores.embarcacao.Barco;
 import classes.setores.empresa.Pescaria;
-import classes.setores.financeiro.Valores;
 import classes.setores.recursosHumanos.Funcionario;
 import classes.setores.recursosHumanos.Pescador;
 import classes.setores.registro.Peixe;
@@ -79,7 +78,7 @@ public class AplicacaoAdmin {
                 System.out.println("Digite ID do barco: ");
                 int id = recebeInt();
 
-                Pescaria.SETOR_EMBARCACAO.adicionaNovoBarco(new Barco(id));
+                new Barco(id);
 
             break;
 
@@ -111,7 +110,7 @@ public class AplicacaoAdmin {
 
         String peixeString = input.nextLine().toUpperCase();
 
-        //passivel de erro caso o string n for um tipo real de peixe da classe Enum
+        //passivel de erro caso "String" recebido não for um tipo real de peixe da classe Enum
         Peixe tipoDoPeixe = (Peixe.valueOf(peixeString));
         return tipoDoPeixe;
     }
@@ -146,31 +145,36 @@ public class AplicacaoAdmin {
 
     public static void decisaoOpcoesSetorFinanceiro(int opcao){
 
-        final int PRECO_PESCAODR = 1;
-        final int VALOR_QUILO_SARDINHA = 2;
-        final int DEFINIR_NOVO_PRECO_PESCADOR = 3;
+        final int PRECO_BASE_FUNCIONARIO = 1;
+        final int DEFINIR_VALOR_BASE_FUNCIONARIO = 2;
+        final int VALOR_QUILO_SARDINHA = 3;
         final int DEFINIR_VALOR_QUILO_SARDINHA = 4;
+        final int EXIBIR_DINHEIRO_EM_CAIXA = 5;
+        final int EXIBIR_RENDA_LIQUIDA = 6;
+        final int EXIBIR_DESPESAS_TOTAIS = 7;
+        final int EXIBIR_RENDA_BRUTA = 8;
+        final int EXIBIR_RELATORIO_ENTRE_DATAS = 9;
 
         switch (opcao){
 
-            case(PRECO_PESCAODR):
+            case(PRECO_BASE_FUNCIONARIO):
 
-                System.out.println("Valor unitario base de pescador: R$" + Pescaria.SETOR_FINANCEIRO.valores.getPrecoPescador());
+                System.out.println("Salário base Funcionário: R$"+Pescaria.SETOR_FINANCEIRO.valores.getPrecoBaseFuncionario());
+
+            break;
+
+            case(DEFINIR_VALOR_BASE_FUNCIONARIO):
+
+                System.out.println("Digite o novo valor base para os funcionários: ");
+                double novoSalarioBase = recebeDouble();
+
+                Pescaria.SETOR_FINANCEIRO.valores.setPrecoBaseFuncionario(novoSalarioBase);
 
             break;
 
             case(VALOR_QUILO_SARDINHA):
 
                 System.out.println("Valor quilo da Sardinha: R$"+ Pescaria.SETOR_FINANCEIRO.valores.getValorDoQuiloDaSardinha());
-
-            break;
-
-            case(DEFINIR_NOVO_PRECO_PESCADOR):
-
-                System.out.println("Digite o novo valor da Sardinha: R$");
-                double novoValor = recebeDouble();
-
-                Pescaria.SETOR_FINANCEIRO.valores.setPrecoPescador(novoValor);
 
             break;
 
@@ -183,6 +187,33 @@ public class AplicacaoAdmin {
 
             break;
 
+            case(EXIBIR_DINHEIRO_EM_CAIXA):
+
+                System.out.println("Dinheiro em caixa: R$"+ Pescaria.SETOR_FINANCEIRO.valores.getDinheiroEmCaixa());
+
+            break;
+
+            case(EXIBIR_RENDA_LIQUIDA):
+
+                System.out.println("Renda liquida total: R$"+ Pescaria.SETOR_REGISTRO.getRendaLiquidaTotal());
+
+            break;
+
+            case(EXIBIR_DESPESAS_TOTAIS):
+
+                System.out.println("De");
+
+            break;
+
+            case(EXIBIR_RENDA_BRUTA):
+
+                System.out.println("Renda bruta das pescas: R$"+Pescaria.SETOR_REGISTRO.getRendaBrutaTotal());
+
+            break;
+
+            case(EXIBIR_RELATORIO_ENTRE_DATAS):
+
+            break;
         }
 
     }
@@ -192,10 +223,12 @@ public class AplicacaoAdmin {
         final int EXIBIR_LISTA_DE_FUNCIONARIOS = 1;
         final int EXIBIR_LISTA_DE_PESCADORES = 2;
         final int FICHA_DE_FUNCIONARIO_POR_NOME = 3;
-        final int BUSCAR_BONUS_DO_FUNCIONARIO_POR_NOME = 4;
-        final int DAR_BONUS_AO_FUNCIONARIO = 5;
-        final int BUSCA_DE_PARTICIAPAO_PESCADOR_POR_NOME = 6;
-        final int CADASTRAR_NOVO_FUNCIONARIO = 7;
+        final int SALARIO_BASE_FUNCIONARIOS = 4;
+        final int DEFINIR_SALARIO_BASE_FUNCIONARIO = 5;
+        final int BUSCAR_BONUS_DO_FUNCIONARIO_POR_NOME = 6;
+        final int DAR_BONUS_AO_FUNCIONARIO = 7;
+        final int BUSCA_DE_PARTICIAPAO_PESCADOR_POR_NOME = 8;
+        final int CADASTRAR_NOVO_FUNCIONARIO = 9;
 
         switch (opcao){
 
@@ -217,6 +250,21 @@ public class AplicacaoAdmin {
                 Funcionario funcionarioLocalizado = recebeFuncionario();
 
                 System.out.println("Ficha de funcionario: "+ funcionarioLocalizado.toString());
+
+            break;
+
+            case(SALARIO_BASE_FUNCIONARIOS):
+
+                System.out.println("Salário base Funcionário: R$"+Pescaria.SETOR_FINANCEIRO.valores.getPrecoBaseFuncionario());
+
+            break;
+
+            case(DEFINIR_SALARIO_BASE_FUNCIONARIO):
+
+                System.out.println("Digite o novo valor base para os funcionários: ");
+                double novoSalarioBase = recebeDouble();
+
+                Pescaria.SETOR_FINANCEIRO.valores.setPrecoBaseFuncionario(novoSalarioBase);
 
             break;
 
@@ -244,7 +292,7 @@ public class AplicacaoAdmin {
             case(BUSCA_DE_PARTICIAPAO_PESCADOR_POR_NOME):
 
                 System.out.println("Digite nome e sobrenome do pescador: ");
-                Pescador pescadorLocalizado = Pescaria.SETOR_RECURSOS_HUMANOS.getPescadorPorNome(input.nextLine());
+                Pescador pescadorLocalizado = recebePescador();
 
                 System.out.println("Historico do pescador: "+pescadorLocalizado.registroPescador);
 
@@ -252,14 +300,35 @@ public class AplicacaoAdmin {
 
             case(CADASTRAR_NOVO_FUNCIONARIO):
 
+                System.out.println("Digte nome e sobrenome do novo funcionario: ");
+                String nomoNovoFuncionario = input.nextLine();
 
+                System.out.println("Digite o CPF do funcionario: ");
+                String cpf = input.nextLine();
 
+                System.out.println("Cargo do funcionario: ");
+                String cargoNovoFuncionario = input.nextLine();
+
+                if (cargoNovoFuncionario.equalsIgnoreCase("pescador")){
+
+                    new Pescador(nomoNovoFuncionario, cpf);
+                }
+                else{
+                    new Funcionario(nomoNovoFuncionario, cpf, cargoNovoFuncionario);
+                }
             break;
-
         }
+    }
+
+    private static Pescador recebePescador(){
+
+        String nomePescador = input.nextLine();
+
+        return Pescaria.SETOR_RECURSOS_HUMANOS.getPescadorPorNome(nomePescador);
 
     }
-    public static Funcionario recebeFuncionario(){
+
+    private static Funcionario recebeFuncionario(){
 
         System.out.println("Digite nome e sobrenome do funcionario");
         String nomeABuscar = input.nextLine();
@@ -270,7 +339,7 @@ public class AplicacaoAdmin {
         return funcionarioLocalizado;
     }
 
-    public static int recebeInt(){
+    private static int recebeInt(){
 
         int opcao = input.nextInt();
         input.nextLine();
@@ -278,7 +347,7 @@ public class AplicacaoAdmin {
         return opcao;
     }
 
-    public static double recebeDouble(){
+    private static double recebeDouble(){
 
         double opcao = input.nextDouble();
         input.nextLine();

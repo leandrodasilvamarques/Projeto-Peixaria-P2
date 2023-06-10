@@ -21,22 +21,37 @@ public class UserViewAdmin {
 
     public static void printOpcoesSetorFinanceiro(){
 
-        System.out.println("[1]Dinheiro em caixa\n" +
-                "[2]Preco de um pescador\n" +
-                "[3]Valor do quilo da sardinha\n" +
-                "[4]Definir novo preço por pescaodr\n" +
-                "[5]Definir Valor do quilo da Sardinha");
+        System.out.println(
+                "[1]Salário base de um funcionario\n" +
+                "[2]Definir novo salário base funcionário\n" +
+                "[3]Exibir Valor do quilo da sardinha\n" +
+                "[4]Definir Valor do quilo da Sardinha\n" +
+                "[5]Exibir dinheiro em caixa\n" +
+                "[6]Exibir Renda liquida\n" +
+                "[7]Exibir despesas totais\n" +
+                "[8]Exibir Renda Bruta\n"+
+                "[8]Exibir relatório entre datas | formato DIA/MES/ANO");
 
     }
 
     public static void printOpcoesSetorRecursosHumanos() {
 
         System.out.println("[1]Exibir Lista de todos os funcionarios\n" +
-                "[2]Ficha de funcionario por nome\n" +
-                "[3]Busca de bonûs do funcionario por nome\n" +
-                "[4]Dar bonûs ao funcionario\n" +
-                "[5]Busca de participação de pescador por nome\n"+
-                "[6]Cadastrar novo funcionario");
+                "[2]Exibir lista de pescadores\n" +
+                "[3]Ficha de funcionario por nome\n" +
+                "[4]Exibir salário base dos funcionaios\n" +
+                "[5]Definir salário base dos funcionaios\n" +
+                "[6]Exibir bonûs de funcionario\n" +
+                "[7]Bonificar funcionário\n" +
+                "[8]Buscar historico de funcionário" +
+                "[9]Cadastrar novo funcionario");
+    }
 
+    public static void printOpcoesSetorRegistro(){
+
+        System.out.println(
+                "[1]Historico total da peixaria: \n" +
+                "[2]Pescas de uma determinada data dia/mes/ano\n" +
+                "[3]Pescas ocorridas entre duas datas");
     }
 }

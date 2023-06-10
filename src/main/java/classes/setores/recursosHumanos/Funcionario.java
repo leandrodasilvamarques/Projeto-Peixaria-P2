@@ -2,13 +2,13 @@ package classes.setores.recursosHumanos;
 
 import classes.setores.empresa.Pescaria;
 
-public abstract class Funcionario {
+public class Funcionario {
 
     //atributos
     private String nome;
     private String cpf;
     private String cargo;
-    private double salario = Pescaria.SETOR_FINANCEIRO.valores.getPrecoPescador();
+    private double salario = Pescaria.SETOR_FINANCEIRO.valores.getPrecoBaseFuncionario();
     private double bonus = 0;
     //
 
@@ -17,6 +17,7 @@ public abstract class Funcionario {
         this.nome = nome;
         this.cpf = cpf;
         this.cargo = cargo;
+        Pescaria.SETOR_RECURSOS_HUMANOS.adicionarFuncionario(this);
     }
     public Funcionario(){
     }
@@ -44,7 +45,7 @@ public abstract class Funcionario {
         this.cargo = cargo;
     }
     public double getSalario() {
-        return salario;
+        return salario + bonus;
     }
     public void setSalario(double salario) {
         this.salario = salario;
@@ -69,8 +70,8 @@ public abstract class Funcionario {
                 "nome='" + nome + '\'' +
                 ", cpf='" + cpf + '\'' +
                 ", cargo='" + cargo + '\'' +
-                ", salario=" + salario +
-                ", bonus=" + bonus +
+                ", salario=R$" + salario +
+                ", bonus=R$" + bonus +
                 '}';
     }
 }
