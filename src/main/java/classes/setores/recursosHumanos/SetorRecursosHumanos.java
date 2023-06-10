@@ -32,6 +32,17 @@ public class SetorRecursosHumanos {
     public void setTodosPescadores(ArrayList<Pescador> todosPescadores) {
         this.todosPescadores = todosPescadores;
     }
+    public Pescador getPescadorPorNome(String nome){
+
+        for(Pescador pescador: todosPescadores) {
+
+            if (pescador.getNome().equalsIgnoreCase(nome)) {
+                return pescador;
+            }
+        }
+        return null;
+
+    }
     //
 
     //metodos para aplicação
