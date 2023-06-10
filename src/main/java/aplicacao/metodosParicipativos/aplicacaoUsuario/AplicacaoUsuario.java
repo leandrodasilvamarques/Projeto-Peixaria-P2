@@ -2,11 +2,13 @@ package aplicacao.metodosParicipativos.aplicacaoUsuario;
 
 import classes.setores.empresa.Pescaria;
 import classes.setores.financeiro.Valores;
+import classes.setores.registro.Pesca;
 import classes.setores.registro.SetorRegistro;
 
 import java.util.Scanner;
 
 public class AplicacaoUsuario {
+    private static double valorTotalDaCompra = 0;
     private static Scanner input = new Scanner(System.in);
 
     public static int recebeInt() {
@@ -21,13 +23,6 @@ public class AplicacaoUsuario {
         return opcao;
     }
 
-    public static void aplicacaoUsuario() {
-
-        UserViewUsuario.printOpcoesUsuario();
-        decisaoOpcoesAdmin(recebeInt());
-
-    }
-
     public static void case1RealizarCompras() {
         System.out.println("Quantos quilos: ");
         double subtracaoDeQuilos = recebeDouble();
@@ -40,11 +35,20 @@ public class AplicacaoUsuario {
         System.out.println(Valores.getValorDoQuiloDaSardinha());
     }
 
-    public static void case3SimularDesconto(){
+    public static double case3SimularDesconto() {
+        System.out.println("Quantos quilos: ");
+        double quilosAComprarPeloUsuario = recebeDouble();
 
+        Pescaria.SETOR_REGISTRO.simulacaoSubtracaoDeQuilosDePeixe(quilosAComprarPeloUsuario);
+
+        System.out.println("Valor total: " + valorTotalDaCompra);
+        System.out.println("Compra realizada e estoque subtraido...");
+
+        valorTotalDaCompra = 0;
+        return quilosAComprarPeloUsuario;
     }
 
-    public static void decisaoOpcoesAdmin(int opcao) {
+    public static void decisaoDoUsuario(int opcao) {
 
         final int REALIZAR_COMPRAS = 1;
         final int VISUALIZAR_PRECOS = 2;
@@ -60,12 +64,17 @@ public class AplicacaoUsuario {
             }
 
             case SIMULAR_DESCONTO -> {
-
+                case3SimularDesconto();
             }
 
             default -> throw new IllegalStateException("Unexpected value: " + opcao);
 
         }
     }
+    public static void aplicacaoUsuario() {
 
+        UserViewUsuario.printOpcoesUsuario();
+        decisaoDoUsuario(recebeInt());
+
+    }
 }
