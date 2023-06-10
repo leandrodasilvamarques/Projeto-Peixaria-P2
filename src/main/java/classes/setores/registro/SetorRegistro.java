@@ -10,26 +10,39 @@ public class SetorRegistro {
 
     //atributos
     public static ArrayList<Pesca> arrayListDeTodoAsPescas = new ArrayList<>();
+    public static ArrayList<Double> arrayListDePesoEmQuilos = new ArrayList<>();
     //
 
     //getters setters
-    public static void getPescaPelaData(Date digiteUmaData){
+    public static void getTotalDeQuilosDeTodasAsPescas() {
+        double somaQuilos = 0;
+        for (Pesca percorrePesca : arrayListDeTodoAsPescas) {
+            if (percorrePesca.getPesoEmQuilos() > 0) {
+                somaQuilos += percorrePesca.getPesoEmQuilos();
+            }
+        }
+        arrayListDePesoEmQuilos.add(somaQuilos);
+    }
+
+    public static void getPescaPelaData(Date digiteUmaData) {
         for (Pesca percorreArrayDePescas : arrayListDeTodoAsPescas) {
-            if(percorreArrayDePescas.getDataDaPesca() == digiteUmaData){
+            if (percorreArrayDePescas.getDataDaPesca() == digiteUmaData) {
                 System.out.println("Pescas com essa data:\n" + percorreArrayDePescas + "\n");
             }
         }
     }
-    public static Barco getBarcoPorPesca(Pesca pesca){
+
+    public static Barco getBarcoPorPesca(Pesca pesca) {
         return Pescaria.SETOR_EMBARCACAO.getBarcoPorPesca(pesca);
     }
-    public static String getRegistros(){
+
+    public static String getRegistros() {
         return Pescaria.SETOR_EMBARCACAO.getListaDeBarcos().toString();
     }
     //
 
     //metodos para aplicação
-    public static void adicionarPesca(Pesca pesca){
+    public static void adicionarPesca(Pesca pesca) {
         arrayListDeTodoAsPescas.add(pesca);
     }
     //
