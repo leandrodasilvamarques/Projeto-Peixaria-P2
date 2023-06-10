@@ -1,6 +1,7 @@
 package classes.setores.embarcacao;
 
 import classes.setores.recursosHumanos.Funcionario;
+import classes.setores.recursosHumanos.Pescador;
 import classes.setores.registro.Peixe;
 import classes.setores.registro.Pesca;
 import classes.setores.empresa.Pescaria;
@@ -40,7 +41,7 @@ public class Barco {
     //
 
     //metodos para aplicação
-    public void adicionarNovaPesca(ArrayList<Funcionario> funcionariosPesca, Peixe tipoPeixe, double pesoQuiloPescado){
+    public void adicionarNovaPesca(ArrayList<Pescador> funcionariosPesca, Peixe tipoPeixe, double pesoQuiloPescado){
         listaPescas.add(new Pesca(funcionariosPesca, tipoPeixe, pesoQuiloPescado));
     }
     //

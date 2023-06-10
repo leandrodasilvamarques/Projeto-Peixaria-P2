@@ -2,6 +2,7 @@ package classes.setores.registro;
 
 import classes.setores.empresa.Pescaria;
 import classes.setores.recursosHumanos.Funcionario;
+import classes.setores.recursosHumanos.Pescador;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -11,17 +12,17 @@ public class Pesca {
     //atributos
     private double pesoEmQuilos;
     private Peixe tipoDoPeixe;
-    private ArrayList<Funcionario> funcionariosDaPesca = new ArrayList<>();
+    private ArrayList<Pescador> funcionariosDaPesca = new ArrayList<>();
     private Date dataDaPesca = new Date();
     //
 
     //construtor
-    public Pesca(ArrayList<Funcionario>
-            funcionariosDaPesca, Peixe tipoDoPeixe, double pesoEmQuilos) {
+    public Pesca(ArrayList<Pescador>funcionariosDaPesca, Peixe tipoDoPeixe, double pesoEmQuilos) {
         this.tipoDoPeixe = tipoDoPeixe;
         this.pesoEmQuilos = pesoEmQuilos;
         Pescaria.SETOR_REGISTRO.adicionarPesca(this);
         this.funcionariosDaPesca.addAll(funcionariosDaPesca);
+        adicionarHistoricoAosPescadores();
     }
     //
 
@@ -40,6 +41,17 @@ public class Pesca {
     }
     public void setTipoDoPeixe(Peixe tipoDoPeixe) {
         this.tipoDoPeixe = tipoDoPeixe;
+    }
+    //
+
+    //metodos para aplicação
+    public void adicionarHistoricoAosPescadores(){
+
+        for (Pescador funcionarios: funcionariosDaPesca){
+
+            funcionarios.adicinarPescaAoRegistro(this);
+        }
+
     }
     //
 

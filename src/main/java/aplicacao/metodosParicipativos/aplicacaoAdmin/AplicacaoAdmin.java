@@ -96,6 +96,7 @@ public class AplicacaoAdmin {
                 System.out.println("ID do barco que ocorreu a pesca:");
                 int idBarco = recebeInt();
 
+                //tratar metodo getBarcoPorID caso nao exista barco com estre ID
                 Barco barcoEncontrado = Pescaria.SETOR_EMBARCACAO.getBarcoPorId(idBarco);
 
 
@@ -107,6 +108,8 @@ public class AplicacaoAdmin {
     }
     public static ArrayList<Funcionario> inputPescadores(){
 
+        ArrayList<Funcionario> pescadores = new ArrayList<>();
+
         String nomeStringPescadores = input.nextLine();
 
         String[] pescadoresString = nomeStringPescadores.split(" ");
@@ -117,20 +120,18 @@ public class AplicacaoAdmin {
 
             if(pescadorLocalizado == null){
 
-                Pescaria.SETOR_RECURSOS_HUMANOS.adicionarFuncionario(new Pescador(stringPorString, null));
+                Funcionario novoPescador = new Pescador(stringPorString, null);
+                pescadores.add(novoPescador);
 
             }
             else{
 
-
+                pescadores.add(pescadorLocalizado);
 
             }
-
-
-
         }
 
-    return null;
+    return pescadores;
     }
 
     public static void decisaoOpcoesSetorFinanceiro(int opcao){

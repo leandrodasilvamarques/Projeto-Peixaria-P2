@@ -1,11 +1,12 @@
 package classes.setores.registro;
 
+import classes.setores.empresa.Pescaria;
 import classes.setores.financeiro.SetorFinanceiro;
 
 public enum Peixe {
 
     //opções de peixe
-    SARDINHA(SetorFinanceiro.valores.getValorDoQuiloDaSardinha());
+    SARDINHA(Pescaria.SETOR_FINANCEIRO.valores.getValorDoQuiloDaSardinha());
     //
 
     //atributo

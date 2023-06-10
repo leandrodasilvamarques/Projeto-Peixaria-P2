@@ -2,6 +2,7 @@ package classes.setores.registro;
 
 import classes.setores.embarcacao.Barco;
 import classes.setores.empresa.Pescaria;
+import classes.setores.recursosHumanos.Pescador;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -9,6 +10,7 @@ import java.util.Date;
 public class SetorRegistro {
     //atributos
     private ArrayList<Pesca> arrayListDeTodoAsPescas = new ArrayList<>();
+    private ArrayList<SetorRegistro> historicosDosPescadores = new ArrayList<>();
     //
 
     //getters setters
@@ -34,6 +36,12 @@ public class SetorRegistro {
     public String getRegistros() {
         return Pescaria.SETOR_EMBARCACAO.getListaDeBarcos().toString();
     }
+    public ArrayList<SetorRegistro> getHistoricosDosPescadores() {
+        return historicosDosPescadores;
+    }
+    public void setHistoricosDosPescadores(ArrayList<SetorRegistro> historicosDosPescadores) {
+        this.historicosDosPescadores = historicosDosPescadores;
+    }
     //
 
     //metodos para aplicação
@@ -42,6 +50,11 @@ public class SetorRegistro {
     }
     public double subtracaoDeQuilosDePeixe(double quantidadeParaSubtrair){
         return getTotalDeQuilosDePeixeDeTodasAsPescas() - quantidadeParaSubtrair;
+    }
+    public void adicionarHistoricoDePescador(SetorRegistro registroPescador){
+
+        historicosDosPescadores.add(registroPescador);
+
     }
     //
 }

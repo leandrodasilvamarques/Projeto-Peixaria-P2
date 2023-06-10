@@ -3,10 +3,10 @@ package classes.setores.financeiro;
 public class SetorFinanceiro {
 
     //atributos
-    public static Valores valores = new Valores();
+    public Valores valores = new Valores();
     //
 
-    public static Valores getValores() {
+    public Valores getValores() {
         return valores;
     }
 }
