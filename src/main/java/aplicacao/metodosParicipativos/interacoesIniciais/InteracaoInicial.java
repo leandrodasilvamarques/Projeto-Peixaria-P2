@@ -23,7 +23,7 @@ public class InteracaoInicial {
             escolhaDoUsuario = scanner.nextInt();
             testaEntradaDoLogin(escolhaDoUsuario);
         } catch (InputMismatchException e){
-            System.out.println("Entrada inválida. Escolha uma das opções acima!");
+            System.out.println("Entrada inválida. Escolha uma das opções acima, por favor!");
         }
 
 
