@@ -1,11 +1,15 @@
 package classes.setores.recursosHumanos;
 
+import classes.setores.empresa.Pescaria;
+
 public abstract class Funcionario {
 
     //atributos
     private String nome;
     private String cpf;
     private String cargo;
+    private double salario = Pescaria.SETOR_FINANCEIRO.valores.getPrecoPescador();
+    private double bonus = 0;
     //
 
     //construtor
@@ -17,6 +21,8 @@ public abstract class Funcionario {
     public Funcionario(){
     }
     //
+
+    //getters setters
 
     //getters setters
     public String getNome() {
@@ -31,5 +37,40 @@ public abstract class Funcionario {
     public void setCpf(String cpf) {
         this.cpf = cpf;
     }
+    public String getCargo() {
+        return cargo;
+    }
+    public void setCargo(String cargo) {
+        this.cargo = cargo;
+    }
+    public double getSalario() {
+        return salario;
+    }
+    public void setSalario(double salario) {
+        this.salario = salario;
+    }
+    public double getBonus() {
+        return bonus;
+    }
+    public void setBonus(double bonus) {
+        this.bonus = bonus;
+    }
     //
+
+    //metodos para aplicação
+    public void incrementarBonus(double bonus){
+        this.bonus+=bonus;
+    }
+    //
+
+    @Override
+    public String toString() {
+        return "Funcionario{" +
+                "nome='" + nome + '\'' +
+                ", cpf='" + cpf + '\'' +
+                ", cargo='" + cargo + '\'' +
+                ", salario=" + salario +
+                ", bonus=" + bonus +
+                '}';
+    }
 }

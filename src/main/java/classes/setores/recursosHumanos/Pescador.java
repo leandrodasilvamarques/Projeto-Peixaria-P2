@@ -26,4 +26,14 @@ public class Pescador extends Funcionario {
         registroPescador.adicionarPesca(pesca);
     }
     //
+
+    //overrides
+
+    public String toString(){
+
+        return this.toString() + "Historico de pescas: "+ this.registroPescador;
+
+    }
+
+    //
 }

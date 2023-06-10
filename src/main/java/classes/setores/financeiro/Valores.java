@@ -9,19 +9,19 @@ public class Valores {
     //
 
     //getters setters
-    public static double getDinheiroEmCaixa() {
+    public  double getDinheiroEmCaixa() {
         return dinheiroEmCaixa;
     }
-    public static double getPrecoPescador() {
+    public  double getPrecoPescador() {
         return precoPescador;
     }
-    public static double getValorDoQuiloDaSardinha() {
+    public  double getValorDoQuiloDaSardinha() {
         return valorDoQuiloDaSardinha;
     }
-    public static void setPrecoPescador(double precoPescador) {
+    public  void setPrecoPescador(double precoPescador) {
         Valores.precoPescador = precoPescador;
     }
-    public static void setValorDoQuiloDaSardinha(double valorDoQuiloDaSardinha) {
+    public  void setValorDoQuiloDaSardinha(double valorDoQuiloDaSardinha) {
         Valores.valorDoQuiloDaSardinha = valorDoQuiloDaSardinha;
     }
     //

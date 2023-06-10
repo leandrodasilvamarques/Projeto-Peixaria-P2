@@ -4,7 +4,7 @@ public class UserViewAdmin {
 
     public static void printOpcoesAdmin(){
 
-        System.out.println("[1] Setor Embarcação\n" +
+        System.out.println("[1]Setor Embarcação\n" +
                 "[2]Setor Financeiro\n" +
                 "[3]Setor Recursos Humanos\n" +
                 "[4]Setor de Registros\n");
@@ -14,7 +14,7 @@ public class UserViewAdmin {
     public static void printOpcoesSetorEmbarcacao(){
 
         System.out.println("[1] Mostrar Barcos\n" +
-                "[2]Cadastrar Novo Barco\n +" +
+                "[2]Cadastrar Novo Barco\n" +
                 "[3]Cadastrar Nova Pesca");
 
     }
@@ -31,11 +31,12 @@ public class UserViewAdmin {
 
     public static void printOpcoesSetorRecursosHumanos() {
 
-        System.out.println("[1]Lista de todos os funcionarios\n" +
+        System.out.println("[1]Exibir Lista de todos os funcionarios\n" +
                 "[2]Ficha de funcionario por nome\n" +
                 "[3]Busca de bonûs do funcionario por nome\n" +
-                "[4]Busca de participação do funcionario por nome\n+" +
-                "[5]Cadastrar novo funcionario");
+                "[4]Dar bonûs ao funcionario\n" +
+                "[5]Busca de participação de pescador por nome\n"+
+                "[6]Cadastrar novo funcionario");
 
     }
 }

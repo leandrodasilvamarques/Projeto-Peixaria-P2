@@ -43,4 +43,12 @@ public class SetorRegistro {
         return getTotalDeQuilosDePeixeDeTodasAsPescas() - quantidadeParaSubtrair;
     }
     //
+
+
+    @Override
+    public String toString() {
+        return "SetorRegistro{" +
+                "arrayListDeTodoAsPescas=" + arrayListDeTodoAsPescas +
+                '}';
+    }
 }

@@ -112,7 +112,7 @@ public class AplicacaoAdmin {
         String peixeString = input.nextLine().toUpperCase();
 
         //passivel de erro caso o string n for um tipo real de peixe da classe Enum
-        Peixe tipoDoPeixe = (Peixe.valueOf(peixeString.toUpperCase()));
+        Peixe tipoDoPeixe = (Peixe.valueOf(peixeString));
         return tipoDoPeixe;
     }
 
@@ -155,13 +155,13 @@ public class AplicacaoAdmin {
 
             case(PRECO_PESCAODR):
 
-                System.out.println("Valor unitario base de pescador: R$" + Valores.getPrecoPescador());
+                System.out.println("Valor unitario base de pescador: R$" + Pescaria.SETOR_FINANCEIRO.valores.getPrecoPescador());
 
             break;
 
             case(VALOR_QUILO_SARDINHA):
 
-                System.out.println("Valor quilo da Sardinha: R$"+Valores.getValorDoQuiloDaSardinha());
+                System.out.println("Valor quilo da Sardinha: R$"+ Pescaria.SETOR_FINANCEIRO.valores.getValorDoQuiloDaSardinha());
 
             break;
 
@@ -170,7 +170,7 @@ public class AplicacaoAdmin {
                 System.out.println("Digite o novo valor da Sardinha: R$");
                 double novoValor = recebeDouble();
 
-                Valores.setPrecoPescador(novoValor);
+                Pescaria.SETOR_FINANCEIRO.valores.setPrecoPescador(novoValor);
 
             break;
 
@@ -179,7 +179,7 @@ public class AplicacaoAdmin {
                 System.out.println("Digite o novo valor do quilo da Sardinha R$");
                 double novoPreco = recebeDouble();
 
-                Valores.setValorDoQuiloDaSardinha(novoPreco);
+                Pescaria.SETOR_FINANCEIRO.valores.setValorDoQuiloDaSardinha(novoPreco);
 
             break;
 
@@ -189,36 +189,85 @@ public class AplicacaoAdmin {
 
     private static void decisaoOpcoesSetorRcursosHumanos(int opcao) {
 
-        final int LISTA_DE_FUNCIONARIOS = 1;
-        final int FICHA_DE_FUNCIONARIO_POR_NOME = 2;
-        final int BUSCAR_DE_BONUS_DO_FUNCIONARIO_POR_NOME = 3;
-        final int BUSCA_DE_PARTICIAPAO_POR_NOME = 4;
-        final int CADASTRAR_NOVO_FUNCIONARIO = 5;
+        final int EXIBIR_LISTA_DE_FUNCIONARIOS = 1;
+        final int EXIBIR_LISTA_DE_PESCADORES = 2;
+        final int FICHA_DE_FUNCIONARIO_POR_NOME = 3;
+        final int BUSCAR_BONUS_DO_FUNCIONARIO_POR_NOME = 4;
+        final int DAR_BONUS_AO_FUNCIONARIO = 5;
+        final int BUSCA_DE_PARTICIAPAO_PESCADOR_POR_NOME = 6;
+        final int CADASTRAR_NOVO_FUNCIONARIO = 7;
 
         switch (opcao){
 
-            case(LISTA_DE_FUNCIONARIOS):
+            case(EXIBIR_LISTA_DE_FUNCIONARIOS):
+
+                System.out.println("Lista de todos os funcinários da empresa: "+ Pescaria.SETOR_RECURSOS_HUMANOS.getTodosFuncionarios());
 
             break;
+
+            case(EXIBIR_LISTA_DE_PESCADORES):
+
+                System.out.println("Lista de todos os funcinários da empresa: "+ Pescaria.SETOR_RECURSOS_HUMANOS.getTodosPescadores());
+
+                break;
 
             case(FICHA_DE_FUNCIONARIO_POR_NOME):
 
+                System.out.println("Digite nome e sobrenome do funcionario: ");
+                Funcionario funcionarioLocalizado = recebeFuncionario();
+
+                System.out.println("Ficha de funcionario: "+ funcionarioLocalizado.toString());
+
             break;
 
-            case(BUSCAR_DE_BONUS_DO_FUNCIONARIO_POR_NOME):
+            case(BUSCAR_BONUS_DO_FUNCIONARIO_POR_NOME):
+
+                System.out.println("Digite nome e sobrenome do funcionario: ");
+                funcionarioLocalizado = recebeFuncionario();
+
+                System.out.println(funcionarioLocalizado.getBonus());
 
             break;
 
-            case(BUSCA_DE_PARTICIAPAO_POR_NOME):
+            case(DAR_BONUS_AO_FUNCIONARIO):
+
+                System.out.println("Digite nome e sobrenome do funcionario: ");
+                funcionarioLocalizado = recebeFuncionario();
+
+                System.out.println("Digite o valor do bonûs para ser incrementado ao funcioanrio: ");
+                double bonusAIncrementar = recebeDouble();
+
+                funcionarioLocalizado.incrementarBonus(bonusAIncrementar);
+
+            break;
+
+            case(BUSCA_DE_PARTICIAPAO_PESCADOR_POR_NOME):
+
+                System.out.println("Digite nome e sobrenome do pescador: ");
+                Pescador pescadorLocalizado = Pescaria.SETOR_RECURSOS_HUMANOS.getPescadorPorNome(input.nextLine());
+
+                System.out.println("Historico do pescador: "+pescadorLocalizado.registroPescador);
 
             break;
 
             case(CADASTRAR_NOVO_FUNCIONARIO):
 
+
+
             break;
 
         }
 
+    }
+    public static Funcionario recebeFuncionario(){
+
+        System.out.println("Digite nome e sobrenome do funcionario");
+        String nomeABuscar = input.nextLine();
+
+        //tratar erro caso não seja encontrado funcionario
+        Funcionario funcionarioLocalizado = Pescaria.SETOR_RECURSOS_HUMANOS.getFuncionarioPorNome(nomeABuscar);
+
+        return funcionarioLocalizado;
     }
 
     public static int recebeInt(){
