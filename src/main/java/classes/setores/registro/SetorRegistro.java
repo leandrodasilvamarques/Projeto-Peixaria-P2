@@ -41,5 +41,6 @@ public class SetorRegistro {
     public static void adicionarPesca(Pesca pesca) {
         arrayListDeTodoAsPescas.add(pesca);
     }
+    public static void subtrai
     //
 }
