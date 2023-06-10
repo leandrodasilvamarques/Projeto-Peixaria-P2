@@ -7,7 +7,8 @@ public class UserViewAdmin {
         System.out.println("[1]Setor Embarcação\n" +
                 "[2]Setor Financeiro\n" +
                 "[3]Setor Recursos Humanos\n" +
-                "[4]Setor de Registros\n");
+                "[4]Setor de Registros\n" +
+                "[5]Sair");
 
     }
 
