@@ -2,8 +2,6 @@ package aplicacao.metodosParicipativos.aplicacaoUsuario;
 
 import classes.setores.empresa.Pescaria;
 import classes.setores.financeiro.Valores;
-import classes.setores.registro.Pesca;
-import classes.setores.registro.SetorRegistro;
 
 import java.util.Scanner;
 
