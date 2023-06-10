@@ -25,13 +25,7 @@ public class SetorEmbarcacao {
     public void setListaDeBarcos(List<Barco> listaDeBarcos) {
         this.listaDeBarcos = listaDeBarcos;
     }
-    //
-
-    //metodos para aplicação
-    public void adicionaNovoBarco(Barco barco){
-        listaDeBarcos.add(barco);
-    }
-    public Barco barcoDeId(int id){
+    public Barco getBarcoPorId(int id){
         for (Barco barco : listaDeBarcos) {
             if (barco.getId() == id){
                 return barco;
@@ -46,6 +40,12 @@ public class SetorEmbarcacao {
             }
         }
         return null;
+    }
+    //
+
+    //metodos para aplicação
+    public void adicionaNovoBarco(Barco barco){
+        listaDeBarcos.add(barco);
     }
     //
 

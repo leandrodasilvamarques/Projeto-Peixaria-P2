@@ -3,9 +3,9 @@ package classes.setores.recursosHumanos;
 public abstract class Funcionario {
 
     //atributos
-    String nome;
-    String cpf;
-    String cargo;
+    private String nome;
+    private String cpf;
+    private String cargo;
     //
 
     //construtor
