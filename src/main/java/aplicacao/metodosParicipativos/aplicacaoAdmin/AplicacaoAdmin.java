@@ -5,6 +5,7 @@ import classes.setores.empresa.Pescaria;
 import classes.setores.financeiro.Valores;
 import classes.setores.recursosHumanos.Funcionario;
 import classes.setores.recursosHumanos.Pescador;
+import classes.setores.registro.Peixe;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -85,10 +86,10 @@ public class AplicacaoAdmin {
             case(CADASTRAR_NOVA_PESCA):
 
                 System.out.println("Digite o nome dos pescadores separados por espaço: ");
-                ArrayList<Funcionario> pescadores = inputPescadores();
+                ArrayList<Pescador> pescadores = inputPescadores();
 
                 System.out.println("Tipo do peixe: ");
-                String tipoDoPeixeString = input.nextLine();
+                Peixe tipoDoPeixe = recoebeTipoDoPeixe();
 
                 System.out.println("Peso total da pesca em quilos: ");
                 double quilosPesca = recebeDouble();
@@ -99,16 +100,25 @@ public class AplicacaoAdmin {
                 //tratar metodo getBarcoPorID caso nao exista barco com estre ID
                 Barco barcoEncontrado = Pescaria.SETOR_EMBARCACAO.getBarcoPorId(idBarco);
 
-
+                barcoEncontrado.adicionarNovaPesca(pescadores, tipoDoPeixe, quilosPesca);
 
             break;
 
         }
-
     }
-    public static ArrayList<Funcionario> inputPescadores(){
 
-        ArrayList<Funcionario> pescadores = new ArrayList<>();
+    public static Peixe recoebeTipoDoPeixe(){
+
+        String peixeString = input.nextLine().toUpperCase();
+
+        //passivel de erro caso o string n for um tipo real de peixe da classe Enum
+        Peixe tipoDoPeixe = (Peixe.valueOf(peixeString.toUpperCase()));
+        return tipoDoPeixe;
+    }
+
+    public static ArrayList<Pescador> inputPescadores(){
+
+        ArrayList<Pescador> pescadores = new ArrayList<>();
 
         String nomeStringPescadores = input.nextLine();
 
@@ -116,11 +126,11 @@ public class AplicacaoAdmin {
 
         for (String stringPorString: pescadoresString){
 
-            Funcionario pescadorLocalizado = Pescaria.SETOR_RECURSOS_HUMANOS.getFuncionarioPorNome(stringPorString);
+            Pescador pescadorLocalizado =  Pescaria.SETOR_RECURSOS_HUMANOS.getPescadorPorNome(stringPorString);
 
             if(pescadorLocalizado == null){
 
-                Funcionario novoPescador = new Pescador(stringPorString, null);
+                Pescador novoPescador = new Pescador(stringPorString, null);
                 pescadores.add(novoPescador);
 
             }
