@@ -7,4 +7,10 @@ import javax.swing.*;
 
 public class UserViewInicial {
 
+    public void printaOpcoesDoUsuario(){
+
+        System.out.println("[1] Fazer login\n" +
+                           "[2] Entrar como Usuario");
+    }
+
 }
