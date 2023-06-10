@@ -4,11 +4,14 @@ import classes.setores.embarcacao.Barco;
 import classes.setores.empresa.Pescaria;
 import classes.setores.financeiro.Valores;
 import classes.setores.recursosHumanos.Funcionario;
+import classes.setores.recursosHumanos.Pescador;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class AplicacaoAdmin {
+
+    public static Scanner input = new Scanner(System.in);
 
 
     public static void aplicacaoAdmin() {
@@ -81,10 +84,8 @@ public class AplicacaoAdmin {
 
             case(CADASTRAR_NOVA_PESCA):
 
-                Scanner input = new Scanner(System.in);
-
                 System.out.println("Digite o nome dos pescadores separados por espaço: ");
-
+                ArrayList<Funcionario> pescadores = inputPescadores();
 
                 System.out.println("Tipo do peixe: ");
                 String tipoDoPeixeString = input.nextLine();
@@ -106,7 +107,6 @@ public class AplicacaoAdmin {
     }
     public static ArrayList<Funcionario> inputPescadores(){
 
-        Scanner input = new Scanner(System.in);
         String nomeStringPescadores = input.nextLine();
 
         String[] pescadoresString = nomeStringPescadores.split(" ");
@@ -117,8 +117,7 @@ public class AplicacaoAdmin {
 
             if(pescadorLocalizado == null){
 
-                Pescaria.SETOR_RECURSOS_HUMANOS.adicionarFuncionario(new Funcionario() {
-                });
+                Pescaria.SETOR_RECURSOS_HUMANOS.adicionarFuncionario(new Pescador(stringPorString, null));
 
             }
             else{
@@ -213,8 +212,6 @@ public class AplicacaoAdmin {
 
     public static int recebeInt(){
 
-        Scanner input = new Scanner(System.in);
-
         int opcao = input.nextInt();
         input.nextLine();
 
@@ -222,8 +219,6 @@ public class AplicacaoAdmin {
     }
 
     public static double recebeDouble(){
-
-        Scanner input = new Scanner(System.in);
 
         double opcao = input.nextDouble();
         input.nextLine();
